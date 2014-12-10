@@ -4,10 +4,10 @@ using System.Collections;
 public class HitTest : MonoBehaviour {
 
     [SerializeField]
-    Transform _sphere;
+    Transform _OneEnnemy;
 
     [SerializeField]
-    Transform _capsule;
+    Transform _OtherEnnemy;
 
     [SerializeField]
     Transform _attacker;
@@ -27,14 +27,14 @@ public class HitTest : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
-            Vector3 position = _sphere.transform.position;
+            Vector3 position = _OneEnnemy.transform.position;
             _myskill._location = position;
             _attacker.GetComponent<PlayerAttackResolver>().ResolveSkill(_myskill);
         }
 
         if (Input.GetKeyDown(KeyCode.Keypad2))
         {
-            Vector3 position = _capsule.transform.position;
+            Vector3 position = _OtherEnnemy.transform.position;
             _myskill._location = position;
             _attacker.GetComponent<PlayerAttackResolver>().ResolveSkill(_myskill);
         }

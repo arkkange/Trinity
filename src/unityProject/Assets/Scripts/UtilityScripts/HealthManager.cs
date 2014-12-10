@@ -17,6 +17,9 @@ public class HealthManager : MonoBehaviour {
     void Start()
     {
         _ActualLife = _MaxLife;
+
+        damage(500.0f);
+
     }
 
     /***********************************************************\

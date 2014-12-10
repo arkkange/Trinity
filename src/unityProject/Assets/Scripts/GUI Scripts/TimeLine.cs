@@ -25,9 +25,7 @@ public class TimeLine : MonoBehaviour {
     [SerializeField]
     GameObject              _cancelButton;
 
-
     //bar panels
-
     [SerializeField]
     RectTransform           _panelPrefabForComp1;
     [SerializeField]
@@ -40,32 +38,8 @@ public class TimeLine : MonoBehaviour {
     RectTransform           _panelPrefabForComp5;  
 
     //text numbers
-
     [SerializeField]
     RectTransform           _textPrefab;
-
-
-    [SerializeField]
-    RectTransform           _textNumber1;
-    [SerializeField]
-    RectTransform           _textNumber2;
-    [SerializeField]
-    RectTransform           _textNumber3;
-    [SerializeField]
-    RectTransform           _textNumber4;
-    [SerializeField]
-    RectTransform           _textNumber5;
-    [SerializeField]
-    RectTransform           _textNumber6;
-    [SerializeField]
-    RectTransform           _textNumber7;
-    [SerializeField]
-    RectTransform           _textNumber8;
-    [SerializeField]
-    RectTransform           _textNumber9;
-    [SerializeField]
-    RectTransform           _textNumber10;
-
 
    /***********************************************************\
    |   Start : Fonction d'initialisation                       |
@@ -73,17 +47,18 @@ public class TimeLine : MonoBehaviour {
    void Start () {
 
        //exemple of add a skill
-       Skill s = new Skill(1, new Vector3(0, 0, 0), Quaternion.identity, 1, 3, 20, 100, true, 0, false, true, false);
-       addSkill(s);
 
-       s = new Skill(2, new Vector3(0, 0, 0), Quaternion.identity, 1, 2, 20, 100, true, 0, false, true, false);
-       addSkill(s);
+       //Skill s = new Skill(1, new Vector3(0, 0, 0), Quaternion.identity, 1, 3, 20, 100, true, 0, false, true, false);
+       //addSkill(s);
 
-       s = new Skill(3, new Vector3(0, 0, 0), Quaternion.identity, 1, 3, 20, 100, true, 0, false, true, false);
-       addSkill(s);
+       //s = new Skill(2, new Vector3(0, 0, 0), Quaternion.identity, 1, 2, 20, 100, true, 0, false, true, false);
+       //addSkill(s);
 
-       s = new Skill(2, new Vector3(0, 0, 0), Quaternion.identity, 1, 1, 20, 100, true, 0, false, true, false);
-       addSkill(s);
+       //s = new Skill(3, new Vector3(0, 0, 0), Quaternion.identity, 1, 3, 20, 100, true, 0, false, true, false);
+       //addSkill(s);
+
+       //s = new Skill(2, new Vector3(0, 0, 0), Quaternion.identity, 1, 1, 20, 100, true, 0, false, true, false);
+       //addSkill(s);
 
 	}
 
