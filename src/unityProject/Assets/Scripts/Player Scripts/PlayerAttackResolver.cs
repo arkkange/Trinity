@@ -74,7 +74,7 @@ public class PlayerAttackResolver : MonoBehaviour {
         yield return new WaitForSeconds( mySkill._castTime );
 
         //get the collisions
-        _TransformsHits = _myCircle.GetComponentInChildren<PlayerColliderScript>()._TransformListOfCollisions;
+        _TransformsHits = _myCircle.GetComponentInChildren<ColliderScript>()._TransformListOfCollisions;
 
 
         //resolution concrete
@@ -90,12 +90,6 @@ public class PlayerAttackResolver : MonoBehaviour {
 
         if (mySkill._isDamage)
         {
-            //case damage
-            //foreach (Transform T in _TransformsHits)
-            //{
-            //    T.GetComponent<HealthManager>().damage(mySkill._damageValue);
-                
-            //}
             for (int i = 0; i < _TransformsHits.Count; i++)
             {
                 _TransformsHits[i].GetComponent<HealthManager>().damage(mySkill._damageValue);

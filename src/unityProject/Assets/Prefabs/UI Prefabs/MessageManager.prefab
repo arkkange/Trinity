@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: MassageManager
+  m_Name: MessageManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,10 +36,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ae1e477cf808dd4e85713c9c1235188, type: 3}
+  m_Script: {fileID: 11500000, guid: 13f5c759d25615149a04f599f2382a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _myCanevas: {fileID: 22400006, guid: 8bceefcf176c45a4e8d7c0b96030f3cf, type: 2}
+  _myCanevas: {fileID: 22400006, guid: 166b12df2354fda42bd8115cd0e64855, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

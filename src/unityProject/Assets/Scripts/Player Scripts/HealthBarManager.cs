@@ -9,6 +9,14 @@ public class HealthBarManager : MonoBehaviour {
     [SerializeField]
     Transform _myHealthManager;
 
+    HealthManager _myHealthManagerScript;
+
+    // Use this for initialization
+    void Start()
+    {
+        _myHealthManagerScript = _myHealthManager.GetComponent<HealthManager>();
+    }
+
     /***********************************************************\
     |   Update : Fonction apellée une fois par frame            |
     \***********************************************************/
@@ -20,17 +28,17 @@ public class HealthBarManager : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _myHealthManager.GetComponent<HealthManager>().damage(100.0f);
+            _myHealthManagerScript.damage(100.0f);
         }
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            _myHealthManager.GetComponent<HealthManager>().heal(100.0f);
+            _myHealthManagerScript.heal(100.0f);
         }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            _myHealthManager.GetComponent<HealthManager>().revive(100.0f);
+            _myHealthManagerScript.revive(100.0f);
         }
        
 	}
@@ -39,7 +47,7 @@ public class HealthBarManager : MonoBehaviour {
     void UpdateBar()
     {
 
-            float lifepercentage =  (_myHealthManager.GetComponent<HealthManager>()._ActualLife / _myHealthManager.GetComponent<HealthManager>()._MaxLife);
+        float lifepercentage = (_myHealthManagerScript._ActualLife / _myHealthManagerScript._MaxLife);
             _myImage.anchorMax = new Vector2(lifepercentage, 1);
 
     }

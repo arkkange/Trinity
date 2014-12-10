@@ -2,21 +2,23 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerColliderScript : MonoBehaviour {
+public class ColliderScript : MonoBehaviour
+{
 
     public List<Transform> _TransformListOfCollisions = new List<Transform>();
 
     /***********************************************************\
     |   OnTriggerEnter : recupère la liste des collisions       |
     \***********************************************************/
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (!_TransformListOfCollisions.Contains(collision.gameObject.transform))
+        Debug.Log("collided");
+        if (!_TransformListOfCollisions.Contains(other.gameObject.transform))
         {
-            _TransformListOfCollisions.Add(collision.gameObject.transform);
-            if (collision.gameObject.tag != "Player")
+            _TransformListOfCollisions.Add(other.gameObject.transform);
+            if (other.gameObject.tag != "Player")
             {
-                Debug.Log("enter : " + collision.gameObject.tag);
+                Debug.Log("enter : " + other.gameObject.tag);
             }
             
          }
@@ -25,12 +27,12 @@ public class PlayerColliderScript : MonoBehaviour {
     /***********************************************************\
     |   OnTriggerEnter : recupère la liste des collisions       |
     \***********************************************************/
-    void OnCollisionExit(Collision collision)
+    void OnTriggerExit(Collider other)
     {
-        _TransformListOfCollisions.Remove(collision.gameObject.transform);
-        if (collision.gameObject.tag != "Player")
+        _TransformListOfCollisions.Remove(other.gameObject.transform);
+        if (other.gameObject.tag != "Player")
         {
-            Debug.Log("Exit : " + collision.gameObject.tag);
+            Debug.Log("Exit : " + other.gameObject.tag);
         }
     }
 

@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ActionsBar : MonoBehaviour {
+public class ActionBar : MonoBehaviour {
 
-    RectTransform _timeLine;
+    [SerializeField]
+    RectTransform _timeLinePrefab;
 
 	// Use this for initialization
 	void Start () {
-        //_timeLine.GetComponent<TimeLine>();
+        TimeLine _timeLine = _timeLinePrefab.GetComponent<TimeLine>();
 	}
 	
 	// Update is called once per frame
