@@ -515,7 +515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &318579274
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 9efc95ab0e83894408808fe2aac21fe0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2b0c94694aa5c34cbaee06e1eceb84e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1597,7 +1597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 87ac025cdcc79f84e92c887bb2dbc176, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76ff7f72a88fabf40b73f963258185b5, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1662,7 +1662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 9efc95ab0e83894408808fe2aac21fe0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2b0c94694aa5c34cbaee06e1eceb84e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3101,7 +3101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 76ff7f72a88fabf40b73f963258185b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 87ac025cdcc79f84e92c887bb2dbc176, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4074,6 +4074,40 @@ Prefab:
       propertyPath: _myPlayer
       value: 
       objectReference: {fileID: 937784908}
+    - target: {fileID: 100022, guid: 26937aae25661864caf3712bc72973c6, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400042, guid: 26937aae25661864caf3712bc72973c6, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 87ac025cdcc79f84e92c887bb2dbc176,
+        type: 3}
+    - target: {fileID: 11400082, guid: 26937aae25661864caf3712bc72973c6, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 87ac025cdcc79f84e92c887bb2dbc176,
+        type: 3}
+    - target: {fileID: 11400014, guid: 26937aae25661864caf3712bc72973c6, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e2b0c94694aa5c34cbaee06e1eceb84e,
+        type: 3}
+    - target: {fileID: 11400058, guid: 26937aae25661864caf3712bc72973c6, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e2b0c94694aa5c34cbaee06e1eceb84e,
+        type: 3}
+    - target: {fileID: 11400074, guid: 26937aae25661864caf3712bc72973c6, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 76ff7f72a88fabf40b73f963258185b5,
+        type: 3}
+    - target: {fileID: 11400050, guid: 26937aae25661864caf3712bc72973c6, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 76ff7f72a88fabf40b73f963258185b5,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26937aae25661864caf3712bc72973c6, type: 2}
   m_RootGameObject: {fileID: 364845309}
@@ -4193,7 +4227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 76ff7f72a88fabf40b73f963258185b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 87ac025cdcc79f84e92c887bb2dbc176, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5205,7 +5239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 87ac025cdcc79f84e92c887bb2dbc176, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76ff7f72a88fabf40b73f963258185b5, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
