@@ -13,6 +13,15 @@
 /*.pidb
 /*.booproj
 
+# All platforms
+Library
+Temp
+*.csproj
+*.pidb
+*.unityproj
+*.sln
+*.userprefs
+
 #Unity3D Generated File On Crash Reports
 sysinfo.txt
 
