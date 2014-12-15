@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class ColliderScript : MonoBehaviour
 {
 
+    //remarque : les colliders des objets de type trigger ne collident qu'avec les minions et les player
+
     public List<Transform> _TransformListOfCollisions = new List<Transform>();
 
     /***********************************************************\
@@ -12,15 +14,9 @@ public class ColliderScript : MonoBehaviour
     \***********************************************************/
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("collided");
         if (!_TransformListOfCollisions.Contains(other.gameObject.transform))
         {
-            _TransformListOfCollisions.Add(other.gameObject.transform);
-            if (other.gameObject.tag != "Player")
-            {
-                Debug.Log("enter : " + other.gameObject.tag);
-            }
-            
+            _TransformListOfCollisions.Add(other.gameObject.transform);          
          }
     }
 
@@ -30,10 +26,6 @@ public class ColliderScript : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         _TransformListOfCollisions.Remove(other.gameObject.transform);
-        if (other.gameObject.tag != "Player")
-        {
-            Debug.Log("Exit : " + other.gameObject.tag);
-        }
     }
 
     /***********************************************************************\

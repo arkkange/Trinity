@@ -15,6 +15,7 @@ public class TimeLine : MonoBehaviour {
     int                     _actualTime = 0;
 
     List<Skill>             _skillList = new List<Skill>();
+
     List<RectTransform>     _portionsTimeLine = new List<RectTransform>();
     List<RectTransform>     _textPortionTimeLine = new List<RectTransform>();
 

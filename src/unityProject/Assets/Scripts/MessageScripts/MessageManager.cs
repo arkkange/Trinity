@@ -9,7 +9,7 @@ public class MessageManager : MonoBehaviour {
     RectTransform _myCanevas;
 
 	void Start () {
-        CreateShortMessage(5, "i'm a super message called by messageManager script");
+        // exemple of use : CreateShortMessage(5, "i'm a super message called by messageManager script");
 	}
 
     public void CreateShortMessage(float time, string message)

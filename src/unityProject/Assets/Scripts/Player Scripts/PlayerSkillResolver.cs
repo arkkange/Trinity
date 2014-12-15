@@ -2,12 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerAttackResolver : MonoBehaviour {
+public class PlayerSkillResolver : MonoBehaviour
+{
+    [SerializeField]
+    Transform _myTransform;
 
     List<Transform> _TransformsHits = new List<Transform>();
 
     //[SerializeField]
     //Transform _myAttacks;   //to change the direction where the skill is casting
+
+    [SerializeField]
+    public float _MySpeed;
 
     [SerializeField]
     Transform _myCircle;
@@ -48,7 +54,7 @@ public class PlayerAttackResolver : MonoBehaviour {
                 
                 break;
 
-            case 5: //special action
+            case 5: //environment action
                 
                 break;
 
@@ -61,17 +67,19 @@ public class PlayerAttackResolver : MonoBehaviour {
 
     IEnumerator resolveCircle(Skill mySkill)
     {
+        yield return new WaitForFixedUpdate(); //toujours le mettre avant de manipuler un objet (comprenant un rigidbody)
         //Circle
         Vector3 myPosition = this.transform.position;
 
         //repositionement du cercle (sous forme de transformation vectorielle pour que soit detecté le deplacement dans le trigger)
-        _myCircle.Translate( (mySkill._location - _myCircle.position)  , Space.World);  // TODO : peut etre une erreur de translate (a verifier)
+        _myCircle.Translate( (mySkill._location - _myCircle.position)  , Space.World);
         _myCircle.localScale = new Vector3(mySkill._scaleModifier, mySkill._scaleModifier, mySkill._scaleModifier);
 
         _myCircle.GetComponentInChildren<MeshRenderer>().enabled = true;
 
         //waiting for cast Time
         yield return new WaitForSeconds( mySkill._castTime );
+        yield return new WaitForFixedUpdate(); //toujours le mettre avant de manipuler un objet (comprenant un rigidbody)
 
         //get the collisions
         _TransformsHits = _myCircle.GetComponentInChildren<ColliderScript>()._TransformListOfCollisions;
@@ -92,7 +100,12 @@ public class PlayerAttackResolver : MonoBehaviour {
         {
             for (int i = 0; i < _TransformsHits.Count; i++)
             {
-                _TransformsHits[i].GetComponent<HealthManager>().damage(mySkill._damageValue);
+                if ( _TransformsHits[i] != _myTransform )
+                {
+                    Debug.Log(_TransformsHits[i].tag);
+                    _TransformsHits[i].GetComponent<HealthManager>().damage(mySkill._damageValue);
+                }
+                
             }
         }
         else
@@ -123,22 +136,24 @@ public class PlayerAttackResolver : MonoBehaviour {
     IEnumerator resolveCone(Skill mySkill)
     {   
         //Cone
-        // TODO : coder resolveCone
+        // TODO : coder resolveCone ( penser a modifier le meshcollider en composants de colliders simples )
 
 
         //waiting for cast Time
         yield return new WaitForSeconds(mySkill._castTime);
+        yield return new WaitForFixedUpdate(); //toujours le mettre avant de manipuler un objet (comprenant un rigidbody)
 
     }
 
     IEnumerator resolveLine(Skill mySkill)
     {
         //Line
-        // TODO : coder resolveLine
+        // TODO : coder resolveLine  (penser a modifier le meshcollider en composants de colliders simples)
 
 
         //waiting for cast Time
         yield return new WaitForSeconds(mySkill._castTime);
+        yield return new WaitForFixedUpdate(); //toujours le mettre avant de manipuler un objet (comprenant un rigidbody)
     }
 
 
@@ -147,15 +162,6 @@ public class PlayerAttackResolver : MonoBehaviour {
     \******************************************************************************************/
     private void removeMinionsFromTransformsHitsList()
     {
-
-        //foreach (Transform T in _TransformsHits)
-        //{
-        //    if (T.tag == _minionsTag)
-        //    {
-        //        _TransformsHits.Remove(T);
-        //    }
-        //}
-
         for(int i=0; i < (_TransformsHits.Count -1) ; i++){
             if (_TransformsHits[i].tag == _minionsTag)
             {
@@ -171,15 +177,6 @@ public class PlayerAttackResolver : MonoBehaviour {
     \******************************************************************************************/
     private void removePlayersFromTransformsHitsList()
     {
-
-        //foreach (Transform T in _TransformsHits)
-        //{
-        //    if (T.tag == _playersTag)
-        //    {
-        //        _TransformsHits.Remove(T);
-        //    }
-        //}
-
         for (int i = 0; i < (_TransformsHits.Count - 1); i++)
         {
             if (_TransformsHits[i].tag == _playersTag)

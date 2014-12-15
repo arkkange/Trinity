@@ -4,7 +4,7 @@ using System.Collections;
 public class BarFallowCamera : MonoBehaviour {
 
     [SerializeField]
-    Transform _myCamera;
+    public Transform _myCamera;
 
 	// Use this for initialization
 	void Start () {
