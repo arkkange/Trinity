@@ -23,20 +23,20 @@ public class HitTest : MonoBehaviour {
 
 	void Update () {
 
-        // TODO : enlever la serie de tests une fois fonctionel 2
+        // TODO : enlever la serie de tests une fois fonctionel
 
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
             Vector3 position = _OneEnnemy.transform.position;
             _myskill._location = position;
-            _attacker.GetComponent<PlayerAttackResolver>().ResolveSkill(_myskill);
+            _attacker.GetComponent<PlayerSkillResolver>().ResolveSkill(_myskill);
         }
 
         if (Input.GetKeyDown(KeyCode.Keypad2))
         {
             Vector3 position = _OtherEnnemy.transform.position;
             _myskill._location = position;
-            _attacker.GetComponent<PlayerAttackResolver>().ResolveSkill(_myskill);
+            _attacker.GetComponent<PlayerSkillResolver>().ResolveSkill(_myskill);
         }
 
 	}
