@@ -4,10 +4,10 @@ using System.Collections;
 public class PlayerIsReadyManager : MonoBehaviour {
 
     [SerializeField]
-    Transform _buttonIsReady;
+    public Transform _buttonIsReady;
 
     [SerializeField]
-    Transform _buttonIsNotReady;
+    public Transform _buttonIsNotReady;
 
 	// Use this for initialization
 	void Start () {

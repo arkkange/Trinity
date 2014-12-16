@@ -12,7 +12,7 @@ Platform assembly: D:\Trinity\src\unityProject\Serveur_Data\Managed\Assembly-CSh
 Loading D:\Trinity\src\unityProject\Serveur_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: D:\Trinity\src\unityProject\Serveur_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading D:\Trinity\src\unityProject\Serveur_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.040 seconds
+- Completed reload, in  0.041 seconds
 desktop: 1920x1080 59Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -60,7 +60,7 @@ Platform assembly: D:\Trinity\src\unityProject\Serveur_Data\Managed\Assembly-CSh
 Loading D:\Trinity\src\unityProject\Serveur_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: D:\Trinity\src\unityProject\Serveur_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading D:\Trinity\src\unityProject\Serveur_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.043 seconds
+- Completed reload, in  0.040 seconds
 desktop: 1920x1080 59Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -94,11 +94,119 @@ Received pong from 192.168.1.3:25000
  
 (Filename:  Line: 836)
 
-myplPlayyr_plPrlaest(yeC_arone)
- c
-(Fei(Ceoname
-: 
-C:/BuildAgen:/B/wouildd3Afc638ent/1work/d6r3dfc63s/Stan60/drtiofacts/SrGeandealonePlayerGeneratebug.epp /UnLine: 49)
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[Skill].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at TimeLine.removeLastSkill () [0x00000] in <filename unknown>:0 
+  at TimeLine.resolveTimeLIne () [0x00000] in <filename unknown>:0 
+  at TimeLine.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
 
-bug.cpp Line: 49)
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[Skill].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at TimeLine.removeLastSkill () [0x00000] in <filename unknown>:0 
+  at TimeLine.resolveTimeLIne () [0x00000] in <filename unknown>:0 
+  at TimeLine.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[Skill].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at TimeLine.removeLastSkill () [0x00000] in <filename unknown>:0 
+  at TimeLine.resolveTimeLIne () [0x00000] in <filename unknown>:0 
+  at TimeLine.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+AAgurgumentOutanOfRangetEonce Apgtion: is out o  Argument
+ iramuteter name: i
+ndex
+  at nameeminColle
+  atons.steGeneric.List`1[Skill].get_Item (Int32 index) [0x00000] in <filename unkn<filename unknownwn>::0 
+ 
+  at TimLineinrem.oveLastSkilkill () [0x 00) [00] in <filenfame unknuwn>:0n 
+  0 tTimeLie.raesolveTiimeLIne ()T [0x00e000] in <fi0lename ulennme unknownown :0
+  a  
+ eLine. pat TimeLine.[pd0te00000] in  <fil0xname unknown>0000
+0
+(F in <filename unknown>:0 
+ )
+
+
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[Skill].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at TimeLine.removeLastSkill () [0x00000] in <filename unknown>:0 
+  at TimeLine.resolveTimeLIne () [0x00000] in <filename unknown>:0 
+  at TimeLine.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[Skill].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at TimeLine.removeLastSkill () [0x00000] in <filename unknown>:0 
+  at TimeLine.resolveTimeLIne () [0x00000] in <filename unknown>:0 
+  at TimeLine.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArAumguntmutntfRaOgeExceptionx Arception: Arut of range.
+Pa range.
+Parameterex
+  at System.Collnamec:ionsi.deenex
+  ListSy1[Skill].stem.Collections.Generic.List`1[Skn llfi.genaet_Item (Int3 
+  at TimeLine.remove2astndeill () [0x0) [0x00000] in <filename unknown>
+:0 
+  at TimeLine.removeLastS() kill () [0x00<filename unkn00wn] 0 i
+n at TifieLlenamedate (w) [0x00
+  0at Tn <filenaimeLnne.resklnown>:0 
+ 
+() il[nax0e00 Line: -1)
+
+name unknown>:0 
+  at TimeLine.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[Skill].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at TimeLine.removeLastSkill () [0x00000] in <filename unknown>:0 
+  at TimeLine.resolveTimeLIne () [0x00000] in <filename unknown>:0 
+  at TimeLine.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[Skill].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at TimeLine.removeLastSkill () [0x00000] in <filename unknown>:0 
+  at TimeLine.resolveTimeLIne () [0x00000] in <filename unknown>:0 
+  at TimeLine.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[Skill].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at TimeLine.removeLastSkill () [0x00000] in <filename unknown>:0 
+  at TimeLine.resolveTimeLIne () [0x00000] in <filename unknown>:0 
+  at TimeLine.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[Skill].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at TimeLine.removeLastSkill () [0x00000] in <filename unknown>:0 
+  at TimeLine.resolveTimeLIne () [0x00000] in <filename unknown>:0 
+  at TimeLine.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
 

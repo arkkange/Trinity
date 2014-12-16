@@ -5,12 +5,13 @@ using System.Collections.Generic;
 
 public class NetworkManager : MonoBehaviour
 {
-    public string _gameName = "Dungeon Trinity";
+    private string _gameName = "Dungeon Trinity";
     private bool _isRefreshingHostList = false;
     private HostData[] _hostList;
     private int _numberOfPlayer = 0;
     private string _mapName = "Map no1";
 
+    
     public bool init = false;
     public GameObject _myPlayer;
     public GameObject _playerPrefab;
@@ -22,6 +23,13 @@ public class NetworkManager : MonoBehaviour
     private GameObject _archerPrefab;
     [SerializeField]
     private GameObject _canvasPlayers;
+    [SerializeField]
+    private GameObject _canvasReady;
+    [SerializeField]
+    private GameObject _canvasTimeline;
+    [SerializeField]
+    private GameObject _canvasActionBar;
+
 
     private bool _playerChoose = false;
     private bool _mapChoose = false;
@@ -66,22 +74,26 @@ public class NetworkManager : MonoBehaviour
     {
         RefreshHostList();
 
+        _canvasTimeline.SetActive(false);
+        _canvasActionBar.SetActive(false);
+        _canvasReady.SetActive(false);
+
         //Boutons pour Choisir son joueur
-        _buttonWarriorG = _canvasPlayers.transform.GetChild(0).gameObject;
+        _buttonWarriorG = _canvasPlayers.transform.GetChild(1).gameObject;
         buttonWarrior = _buttonWarriorG.GetComponent<Button>();
         buttonWarrior.onClick.AddListener(() => { setUpCharacter(1); });
         _buttonWarriorG.GetComponent<Image>().color = Color.green;
         _buttonWarriorG.SetActive(false);
 
 
-        _buttonPriestG = _canvasPlayers.transform.GetChild(1).gameObject;
+        _buttonPriestG = _canvasPlayers.transform.GetChild(2).gameObject;
         buttonPriest = _buttonPriestG.GetComponent<Button>();
         buttonPriest.onClick.AddListener(() => { setUpCharacter(2); });
         _buttonPriestG.GetComponent<Image>().color = Color.green;
         _buttonPriestG.SetActive(false);
 
 
-        _buttonArcherG = _canvasPlayers.transform.GetChild(2).gameObject;
+        _buttonArcherG = _canvasPlayers.transform.GetChild(3).gameObject;
         buttonArcher = _buttonArcherG.GetComponent<Button>();
         buttonArcher.onClick.AddListener(() => { setUpCharacter(3); });
         _buttonArcherG.GetComponent<Image>().color = Color.green;
@@ -89,7 +101,7 @@ public class NetworkManager : MonoBehaviour
 
 
         //Boutons pour Choisir une Map
-        _buttonMap1G = _canvasPlayers.transform.GetChild(3).gameObject;
+        _buttonMap1G = _canvasPlayers.transform.GetChild(4).gameObject;
         Button buttonMap1 = _buttonMap1G.GetComponent<Button>();
         buttonMap1.onClick.AddListener(() => { setUpMap(1); });
         _buttonMap1G.SetActive(false);
@@ -104,17 +116,17 @@ public class NetworkManager : MonoBehaviour
         buttonMap3.onClick.AddListener(() => { setUpMap(3); });
         */
         //Bouton pour créer une partie
-        _buttonValG = _canvasPlayers.transform.GetChild(4).gameObject;
+        _buttonValG = _canvasPlayers.transform.GetChild(5).gameObject;
         Button buttonVal = _buttonValG.GetComponent<Button>();
         buttonVal.onClick.AddListener(() => { UiLobby(); });
 
         //Bouton pour Rechercher une Partie
-        _buttonSearchG = _canvasPlayers.transform.GetChild(5).gameObject;
+        _buttonSearchG = _canvasPlayers.transform.GetChild(6).gameObject;
         Button buttonSearch = _buttonSearchG.GetComponent<Button>();
         buttonSearch.onClick.AddListener(() => { RefreshHostList(); });
 
 
-        _buttonValLobby = _canvasPlayers.transform.GetChild(6).gameObject;
+        _buttonValLobby = _canvasPlayers.transform.GetChild(7).gameObject;
         Button buttonValLobby = _buttonValLobby.GetComponent<Button>();
         buttonValLobby.onClick.AddListener(() => { StartGame(); });
         _buttonValLobby.SetActive(false);
@@ -455,7 +467,9 @@ public class NetworkManager : MonoBehaviour
 
         _myPlayer = Network.Instantiate(_playerPrefab, pos, Quaternion.identity, 0) as GameObject;
         init = true;
-
+        _canvasReady.SetActive(true);
+        _canvasTimeline.SetActive(true);
+        _canvasActionBar.SetActive(true);
     }
 
 }
