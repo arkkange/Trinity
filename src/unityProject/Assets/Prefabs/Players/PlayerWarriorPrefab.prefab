@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myTransform: {fileID: 400024}
-  _MySpeed: 1
+  _MySpeed: 1.5
   _myCircle: {fileID: 400020}
   _myCone: {fileID: 400028}
   _myLine: {fileID: 400030}

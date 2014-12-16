@@ -16,8 +16,8 @@ public class HitTest : MonoBehaviour {
 
     void Start()
     {
-        //skill de type circle faisant  100 degats affectant lesm minions
-        _myskill = new Skill(1, new Vector3(0, 0, 0), Quaternion.identity, 1, 3, 20, 100, true, 0, false, true, true);
+        //skill de type circle faisant  100 degats affectant lesm minions lancée par le joueur
+        _myskill = new Skill(1, _attacker.position, new Vector3(0, 0, 0), Quaternion.identity, 1, 3, 20, 100, true, 0, false, true, true);
     }
 
 

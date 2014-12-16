@@ -320,7 +320,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e1325e0f8d420489023b442c55f80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MessageManager: {fileID: 22400006, guid: 166b12df2354fda42bd8115cd0e64855, type: 2}
+  _myPlayer: {fileID: 0}
+  _myActionBarCanevas: {fileID: 0}
+  MessageManager: {fileID: 0}
   _maxTime: 10
   _timeLinePanel: {fileID: 22400016}
   _cancelButton: {fileID: 100004}

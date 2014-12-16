@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class ActionBar : MonoBehaviour {
@@ -26,7 +27,7 @@ public class ActionBar : MonoBehaviour {
     bool _activeSkill2;
     bool _activeSkill3;
     bool _activeMovement;
-    bool _activeAction;
+    bool _activeSpecialAction;
 
     bool _fallowActiveSkill1;
     bool _fallowActiveSkill2;
@@ -62,6 +63,8 @@ public class ActionBar : MonoBehaviour {
 
     //click events position
     Vector3 _lastPositionClicked;
+    List<Vector3> _MoveList = new List<Vector3>();    //listes des vecteurs de deplacements du personnage
+    // TODO : après resolution de la time line, il faut reset la position initiale du joueur dans cette liste
 
     //visual objects
     [SerializeField]
@@ -69,9 +72,20 @@ public class ActionBar : MonoBehaviour {
     LineRenderer _myLine;
 
     [SerializeField]
+    Transform _CirclePrefab;
+    Transform _mycircle;
+
+    [SerializeField]
+    Transform _LinePrefab;
+
+    [SerializeField]
+    Transform _ConePrefab;
+
+    [SerializeField]
     Transform _endMovementRingPrefab;
     Transform _endMovementRing;
     Text _endMovementRingText;
+    List<Transform> _listOfRingsOfMovements = new List<Transform>();
 
 	// Use this for initialization
 	void Start () {
@@ -80,41 +94,132 @@ public class ActionBar : MonoBehaviour {
         _mytimeLine = _myTimeLineObject.GetComponent<TimeLine>();
         _myLine = _myLineRenderObject.GetComponent<LineRenderer>();
         _myPlayerSKillResolver = _myPlayer.GetComponent<PlayerSkillResolver>();
+        _MoveList.Add(_myPlayer.position);
 
-        _activeSkill1   = false;
-        _activeSkill2   = false;
-        _activeSkill3   = false;
-        _activeMovement = false;
-        _activeAction   = false;
+        _activeSkill1           = false;
+        _activeSkill2           = false;
+        _activeSkill3           = false;
+        _activeMovement         = false;
+        _activeSpecialAction    = false;
 
-        _fallowActiveSkill1 = false;
-        _fallowActiveSkill2 = false;
-        _fallowActiveSkill3 = false;
-        _fallowActiveMovement = false;
-        _fallowActiveAction = false;
+        _fallowActiveSkill1     = false;
+        _fallowActiveSkill2     = false;
+        _fallowActiveSkill3     = false;
+        _fallowActiveMovement   = false;
+        _fallowActiveAction     = false;
 
 	}
 	
 	// Update is called once per frame
-	void Update () {
+    void Update()
+    {
 
-	    //case skill 1 active
+        //case skill 1 active
         if (_activeSkill1)
         {
 
         }
 
         //case skill 2 active
-        if (_activeSkill2)
+        if (_activeSkill2)//sort de zone
         {
 
+            //cas de l'activation ud skill
+            if (Input.GetMouseButtonDown(1) || Input.GetMouseButton(1))    //clic droit
+            {
+                //Creation d'un plan destiné a récupérer la position de l'objet
+                Plane playerPlane = new Plane(Vector3.up, _myPlayer.position);
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                float hitdist = 0.0f;
+                if (playerPlane.Raycast(ray, out hitdist))
+                {
+
+                    _lastPositionClicked = ray.GetPoint(hitdist);
+
+                    if (!_mycircle)
+                    {
+                        _mycircle = Instantiate(_CirclePrefab) as Transform;
+                    }
+                    _mycircle.localScale = new Vector3(1, 1, 1);
+                    _mycircle.position = _lastPositionClicked;
+
+                    _CurrentSkillChoice = new Skill(1, _myPlayer.position, _lastPositionClicked, Quaternion.identity, 1, 2, 10, 0, true, 200, false, true, true);
+                }
+
+            }
         }
+        //gestionaire d'evenement de activeSkill3
+        if ((_fallowActiveSkill2 != _activeSkill2))
+        {
+            if (_activeSkill2 == true)
+            {
+                _fallowActiveSkill2 = true;
+            }
+            else
+            {
+                //cas ou on desactive la fonctionalité
+                _fallowActiveSkill2 = false;
+
+                if (_mycircle)
+                {
+                    Destroy(_mycircle.gameObject);
+                }
+
+            }
+        }
+
+
 
         //case skill 3 active
-        if (_activeSkill3)
+        if (_activeSkill3)  //potion
         {
 
+            //cas de l'activation du skill
+            if (Input.GetMouseButtonDown(1) || Input.GetMouseButton(1))    //clic droit
+            {
+                //Creation d'un plan destiné a récupérer la position de l'objet
+                Plane playerPlane = new Plane(Vector3.up, _myPlayer.position);
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                float hitdist = 0.0f;
+                if (playerPlane.Raycast(ray, out hitdist))
+                {
+                    
+                    _lastPositionClicked = ray.GetPoint(hitdist);
+
+                    if (!_mycircle)
+                    {
+                        _mycircle = Instantiate(_CirclePrefab) as Transform;
+                    }
+                    _mycircle.localScale = new Vector3( 1,1,1);
+                    _mycircle.position = _lastPositionClicked;
+                    
+                    _CurrentSkillChoice = new Skill(1, _myPlayer.position, _lastPositionClicked, Quaternion.identity, 1, 2, 10, 0, false, 200, false, true, true);
+                }
+
+            }
+
         }
+        //gestionaire d'evenement de activeSkill3
+        if ((_fallowActiveSkill3 != _activeSkill3))
+        {
+            if (_activeSkill3 == true)
+            {
+                _fallowActiveSkill3 = true;
+            }
+            else
+            {
+                //cas ou on desactive la fonctionalité
+                _fallowActiveSkill3 = false;
+
+                if (_mycircle)
+                {
+                    Destroy(_mycircle.gameObject);
+                }
+                    
+            }
+        }
+
+
 
         //case skill movePLayer active
         if (_activeMovement)
@@ -130,22 +235,39 @@ public class ActionBar : MonoBehaviour {
                 {
                     _lastPositionClicked = ray.GetPoint(hitdist);
 
-                    float PlayerSpeed = _myPlayerSKillResolver._MySpeed;        //distance parcourue en 1s par le personnage
-                    Vector3 myMove = _lastPositionClicked - _myPlayer.position; //vecteur de deplacement du personnage
+                    float PlayerSpeed = _myPlayerSKillResolver._MySpeed;                //distance parcourue en 1s par le personnage
+                    Vector3 myMove;
+                    if (_MoveList.Count > 0)
+                    {
+                        myMove = _lastPositionClicked - _MoveList[_MoveList.Count - 1]; //vecteur de deplacement du personnage
+                    }
+                    else
+                    {
+                        myMove = _lastPositionClicked - _myPlayer.position;             //vecteur de deplacement du personnage
+                    }
+
 
                     float length = myMove.magnitude;
                     float rest = length % PlayerSpeed;                          //le surplus de distance à parcourir
                     float numberOfMove = (length - rest) / PlayerSpeed;         //le nombre de vitesses parcourues pour le mouvement actuel
-                    if(rest > 0)numberOfMove ++;
+                    if (rest > 0) numberOfMove++;
 
                     Vector3 myMoveResult = myMove.normalized * PlayerSpeed * numberOfMove;
 
-                    //coix des positions de la ligne
-                    _myLine.SetPosition(0, _myPlayer.position);
+                    //choix des positions de la ligne
+                    if (_MoveList.Count > 0)
+                    {
+                        _myLine.SetPosition(0, _MoveList[_MoveList.Count - 1]);
+                    }
+                    else
+                    {
+                        _myLine.SetPosition(0, _myPlayer.position);
+                    }
                     _myLine.SetPosition(1, _lastPositionClicked);
 
                     //gestion de la ring
-                    if(!_endMovementRing){
+                    if (!_endMovementRing)
+                    {
                         _endMovementRing = Instantiate(_endMovementRingPrefab) as Transform;
                         _endMovementRing.GetComponentInChildren<BarFallowCamera>()._myCamera = _myCamera;
                         _endMovementRingText = _endMovementRing.GetComponentInChildren<Text>();
@@ -154,7 +276,15 @@ public class ActionBar : MonoBehaviour {
                     _endMovementRingText.text = numberOfMove.ToString();
 
                     //upadate the actual Skill
-                    _CurrentSkillChoice = new Skill(4, _lastPositionClicked, numberOfMove);
+                    if (_MoveList.Count > 0)
+                    {
+                        _CurrentSkillChoice = new Skill(_MoveList[_MoveList.Count - 1], _lastPositionClicked, numberOfMove);
+                    }
+                    else
+                    {
+                        _CurrentSkillChoice = new Skill(_myPlayer.position, _lastPositionClicked, numberOfMove);
+                    }
+
                 }
             }
 
@@ -180,18 +310,22 @@ public class ActionBar : MonoBehaviour {
             }
         }
 
-        //case
 
-        if (_activeAction)
+
+
+        //case special action
+
+        if (_activeSpecialAction)
         {
 
         }
 
-	}
 
-    /***********************************************************\
-    |   switchSkill1Active
-    \***********************************************************/
+    }
+
+    /******************************\
+    |   switchSkill1Active         |
+    \******************************/
     public void switchSkill1Active()
     {
         if (_activeSkill1)
@@ -200,8 +334,9 @@ public class ActionBar : MonoBehaviour {
             _buttonAction1.active = true;
             _buttonAction1_cancel.active = false;
             _activeSkill1 = false;
+
             _buttonValidate.active = false;
-            // TODO : evenements de suppression du skill
+            Debug.Log(_buttonValidate.active);
         }
         else
         {
@@ -229,7 +364,7 @@ public class ActionBar : MonoBehaviour {
 
             _buttonSpecialAction.active = true;
             _buttonSpecialAction_cancel.active = false;
-            _activeAction = false;
+            _activeSpecialAction = false;
 
         }
     }
@@ -246,7 +381,6 @@ public class ActionBar : MonoBehaviour {
             _buttonAction2_cancel.active = false;
             _activeSkill2 = false;
             _buttonValidate.active = false;
-            // TODO : evenements de suppression du skill
         }
         else
         {
@@ -272,7 +406,7 @@ public class ActionBar : MonoBehaviour {
 
             _buttonSpecialAction.active = true;
             _buttonSpecialAction_cancel.active = false;
-            _activeAction = false;
+            _activeSpecialAction = false;
 
         }
     }
@@ -282,14 +416,13 @@ public class ActionBar : MonoBehaviour {
     \***********************************************************/
     public void switchSkill3Active()
     {
-        if (_activeSkill3) //est-il actif ? oui/non
+        if (_activeSkill3)
         {
             //rends inactif
             _buttonAction3.active = true;
             _buttonAction3_cancel.active = false;
             _activeSkill3 = false;
             _buttonValidate.active = false;
-            // TODO : evenements de suppression du skill
         }
         else
         {
@@ -315,13 +448,13 @@ public class ActionBar : MonoBehaviour {
 
             _buttonSpecialAction.active = true;
             _buttonSpecialAction_cancel.active = false;
-            _activeAction = false;
+            _activeSpecialAction = false;
 
         }
     }
 
     /***********************************************************\
-    |   switchMoveActive
+    |   switchMoveActive                                        |
     \***********************************************************/
     public void switchMoveActive()
     {
@@ -357,21 +490,21 @@ public class ActionBar : MonoBehaviour {
 
             _buttonSpecialAction.active = true;
             _buttonSpecialAction_cancel.active = false;
-            _activeAction = false;
+            _activeSpecialAction = false;
         }
     }
 
     /***********************************************************\
-    |   specialAction
+    |   specialAction                                           |
     \***********************************************************/
     public void switchSpecialAction()
     {
-        if (_activeAction)
+        if (_activeSpecialAction)
         {
             //rends inactif
             _buttonSpecialAction.active = true;
             _buttonSpecialAction_cancel.active = false;
-            _activeAction = false;
+            _activeSpecialAction = false;
             _buttonValidate.active = false;
         }
         else
@@ -381,8 +514,9 @@ public class ActionBar : MonoBehaviour {
 
             _buttonSpecialAction.active = false;
             _buttonSpecialAction_cancel.active = true;
-            _activeAction = true;
+            _activeSpecialAction = true;
 
+            //rends inactif 1,2,3 et move
             _buttonAction1.active = true;
             _buttonAction1_cancel.active = false;
             _activeSkill1 = false;
@@ -401,25 +535,52 @@ public class ActionBar : MonoBehaviour {
         }
     }
 
-    /************************************************************\
-    |   _debugBarStates : affiche les différents etats de la bar |
-    \************************************************************/
-    public void _debugBarStates()
-    {
-        Debug.Log("etat du skill 1 : "+_activeSkill1);
-        Debug.Log("etat du skill 2 : "+_activeSkill2);
-        Debug.Log("etat du skill 3 : "+_activeSkill3);
-        Debug.Log("etat du mouvement : "+_activeMovement);
-        Debug.Log("etat du special : "+_activeAction);
-    }
-
-    /***********************************************************\
-    |   SendActualSkillToTimeLine() : a validation function who send the skill to timeLine
-    \***********************************************************/
+    /**************************************************************************************\
+    |   SendActualSkillToTimeLine() : a validation function who send the skill to timeLine |
+    \**************************************************************************************/
     public void SendActualSkillToTimeLine()
     {
         //TODO : coder SendActualSkillToTimeLine()
+        bool isPossible = _mytimeLine.addSkill(_CurrentSkillChoice);
+
+        if (isPossible)
+        {
+            if (_CurrentSkillChoice._type == 4)
+            {
+                _MoveList.Add(_CurrentSkillChoice._location);
+
+                Transform MovementRing = Instantiate(_endMovementRingPrefab) as Transform;
+                MovementRing.GetComponentInChildren<BarFallowCamera>()._myCamera = _myCamera;
+                MovementRing.position = _CurrentSkillChoice._location;
+                MovementRing.GetComponentInChildren<Text>().text = (_MoveList.Count - 1).ToString();
+
+                _listOfRingsOfMovements.Add(MovementRing);
+            }
+            
+        }
 
     }
+
+    public void clearActions()  //called when the timeLine is resolved
+    {
+        //suppression des positions et reset de la position du joueur
+        for (int i = (_MoveList.Count - 1); i >= 0; i--)
+        {
+            _MoveList.RemoveAt(i);
+        }
+        _MoveList.Add(_myPlayer.position);
+
+        //supression de toutes les positions de mouvements
+        for (int i = (_listOfRingsOfMovements.Count - 1); i >= 0; i--)
+        {
+            Destroy(_listOfRingsOfMovements[i].gameObject);
+            _listOfRingsOfMovements.RemoveAt(i);
+        }
+
+        _myLine.SetPosition(0, new Vector3(0, 0, 0));
+        _myLine.SetPosition(1, new Vector3(0, 0, 0));
+
+    }
+
 
 }

@@ -30,6 +30,38 @@ public class PlayerSkillResolver : MonoBehaviour
     [SerializeField]
     string _minionsTag;
 
+    //movementGestion
+    bool isMooving;
+    float _currentTime;
+    float _movementTime;
+    Vector3 _movementVector;
+
+    /******************************************************************************************\
+    |   Start : use this for initialisation                                                    |
+    \******************************************************************************************/
+    void Start()
+    {
+        isMooving = false;
+    }
+
+    /******************************************************************************************\
+    |   FixedUpdate : This function is called every fixed framerate frame                      |
+    \******************************************************************************************/
+    void Update(){
+        if (isMooving)
+        {
+            if (_currentTime <= _movementTime)
+            {
+                _myTransform.transform.Translate( (_movementVector * Time.deltaTime) / _movementTime);
+                _currentTime += Time.deltaTime;
+            }
+            else
+            {
+                isMooving = false;
+            }
+        }
+
+    }
 
     /******************************************************************************************\
     |   ResolveSkill : creation de la coroutine associée a la resolution du skill en question  |
@@ -39,23 +71,23 @@ public class PlayerSkillResolver : MonoBehaviour
         switch (mySkill._type)
         {
             case 1: //circle
-                StartCoroutine(resolveCircle(mySkill));
+                StartCoroutine(resolveCircle(mySkill) );
                 break;
 
             case 2: //cone
-                StartCoroutine(resolveCone(mySkill));
+                StartCoroutine(resolveCone(mySkill) );
                 break;
 
             case 3: //Line
-                StartCoroutine(resolveLine(mySkill));
+                StartCoroutine(resolveLine(mySkill) );
                 break;
 
             case 4: //move
-                
+                resolveMovement(mySkill);
                 break;
 
             case 5: //environment action
-                
+                StartCoroutine(resolveSpecial(mySkill));
                 break;
 
             default:
@@ -123,7 +155,9 @@ public class PlayerSkillResolver : MonoBehaviour
                 //case heal
                 for (int i = 0; i < _TransformsHits.Count; i++)
                 {
-                    _TransformsHits[i].GetComponent<HealthManager>().heal(mySkill._healValue);
+                    Debug.Log("skill : " + mySkill._healValue);
+                    HealthManager HealthCIble = _TransformsHits[i].GetComponent<HealthManager>();
+                    HealthCIble.heal(mySkill._healValue);
                 }
             }
         }
@@ -156,13 +190,36 @@ public class PlayerSkillResolver : MonoBehaviour
         yield return new WaitForFixedUpdate(); //toujours le mettre avant de manipuler un objet (comprenant un rigidbody)
     }
 
+    IEnumerator resolveSpecial(Skill mySkill)
+    {
+        //Line
+        // TODO : coder resolveLine  (penser a modifier le meshcollider en composants de colliders simples)
+
+
+        //waiting for cast Time
+        yield return new WaitForSeconds(mySkill._castTime);
+        yield return new WaitForFixedUpdate(); //toujours le mettre avant de manipuler un objet (comprenant un rigidbody)
+    }
+    /******************************************************************************************\
+    |   ResolveMovement() : gestion du mouvement du skill de movement                          |
+    \******************************************************************************************/
+    void resolveMovement(Skill mySKill){
+
+        //TODO : ajouter la gestion des obstacle
+
+        _currentTime = 0;
+        _movementTime = mySKill._castTime;
+        _movementVector = mySKill._location - mySKill._initialLocation;
+        isMooving = true;
+    }
 
     /******************************************************************************************\
     |   removeMinionsFromTransformsHitsList                                                    |
     \******************************************************************************************/
-    private void removeMinionsFromTransformsHitsList()
+    void removeMinionsFromTransformsHitsList()
     {
-        for(int i=0; i < (_TransformsHits.Count -1) ; i++){
+        for(int i= _TransformsHits.Count -1; i >= 0  ; i--)
+        {
             if (_TransformsHits[i].tag == _minionsTag)
             {
                 _TransformsHits.RemoveAt(i);
@@ -171,22 +228,31 @@ public class PlayerSkillResolver : MonoBehaviour
 
     }
 
-
     /******************************************************************************************\
     |   removePlayersFromTransformsHitsList                                                    |
     \******************************************************************************************/
-    private void removePlayersFromTransformsHitsList()
+    void removePlayersFromTransformsHitsList()
     {
-        for (int i = 0; i < (_TransformsHits.Count - 1); i++)
+        for (int i = _TransformsHits.Count - 1; i >= 0; i--)
         {
             if (_TransformsHits[i].tag == _playersTag)
             {
                 _TransformsHits.RemoveAt(i);
             }
-        }
 
+        }
     }
 
-
+    void PrintHits(List<Transform> mytable){
+        for (int i = 0 ; i < (_TransformsHits.Count - 1) ; i++)
+        {
+            if (_TransformsHits[i].tag == _minionsTag)
+            {
+                _TransformsHits.RemoveAt(i);
+            }
+        }
+    }
 
 }
+
+

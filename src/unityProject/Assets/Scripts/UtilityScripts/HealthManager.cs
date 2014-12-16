@@ -16,7 +16,8 @@ public class HealthManager : MonoBehaviour {
     \***********************************************************/
     void Start()
     {
-        _ActualLife = _MaxLife;
+        _ActualLife = _MaxLife/2;
+        // TODO : remettre a maxlife et non /2
     }
 
     /***********************************************************\

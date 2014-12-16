@@ -6,6 +6,7 @@ public class Skill : MonoBehaviour {
     public int              _type;              // 1:circle     2:cone      3:line      4:movement      5:special action
     public float            _scaleModifier;
     public Vector3          _location;
+    public Vector3          _initialLocation;
     public Quaternion       _rotation;
     public float            _castTime;
     public int              _powerValue;
@@ -21,33 +22,39 @@ public class Skill : MonoBehaviour {
     /***********************************************************\
     |       Constructeur (damage or heal skill)                 |
     \***********************************************************/
-    public Skill(int type, Vector3 location, Quaternion rotation, float scaleModifier, float castTime, int powerValue, int damageValue, bool isDamage, int healValue, bool isResurection, bool affectPlayers, bool affectMinions)
+    public Skill(int type, Vector3 initialLocation, Vector3 skillLocation, Quaternion rotation, float scaleModifier, float castTime, int powerValue, int damageValue, bool isDamage, int healValue, bool isResurection, bool affectPlayers, bool affectMinions)
     {
-        _type           = type;
-        _scaleModifier  = scaleModifier;
-        _location       = location;
-        _rotation       = rotation;
-        _castTime       = castTime;
-        _powerValue     = powerValue;
+        _type               = type;
+        _scaleModifier      = scaleModifier;
+        _initialLocation    = initialLocation;
+        _location           = skillLocation;
+        _rotation           = rotation;
+        _castTime           = castTime;
+        _powerValue         = powerValue;
 
-        _damageValue    = damageValue;
-        _isDamage       = isDamage;
-        _healValue      = healValue;
-        _isResurection  = isResurection;
-        _affectPlayers  = affectPlayers;
-        _affectMinions  = affectMinions;
-        _isMovement     = false;
+        _damageValue        = damageValue;
+        _isDamage           = isDamage;
+        _healValue          = healValue;
+        _isResurection      = isResurection;
+        _affectPlayers      = affectPlayers;
+        _affectMinions      = affectMinions;
+        _isMovement         = false;
     }
 
     /***********************************************************\
     |       Constructeur (mouvement)                            |
     \***********************************************************/
-    public Skill(int type, Vector3 location, float castTime)    //type Movement
+    public Skill(Vector3 initialLocation, Vector3 location, float castTime)    //type Movement de par son constructeur
     {
-        _type = type;
+        _type = 4;
         _isMovement = false;
+        _initialLocation = initialLocation;
         _location = location;
         _castTime = castTime;
+    }
+
+    public void skillDebug(){
+        Debug.Log("skillDebug : " + _type + " , " + _initialLocation + " , " + _location + " , " + _castTime);
     }
 
 }
