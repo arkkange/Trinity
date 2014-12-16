@@ -31,4 +31,3 @@ Developpement d'un boss.
 Passage d'un niveau à l'autre.
 Developpement d'un generateur de dongeon aléatoire.
 
-Harmoniser la patie serveur et la client.
