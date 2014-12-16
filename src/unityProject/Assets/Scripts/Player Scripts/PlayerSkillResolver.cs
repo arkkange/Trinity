@@ -134,7 +134,7 @@ public class PlayerSkillResolver : MonoBehaviour
             {
                 if ( _TransformsHits[i] != _myTransform )
                 {
-                    Debug.Log(_TransformsHits[i].tag);
+                    //Debug.Log(_TransformsHits[i].tag);
                     _TransformsHits[i].GetComponent<HealthManager>().damage(mySkill._damageValue);
                 }
                 
@@ -155,7 +155,6 @@ public class PlayerSkillResolver : MonoBehaviour
                 //case heal
                 for (int i = 0; i < _TransformsHits.Count; i++)
                 {
-                    Debug.Log("skill : " + mySkill._healValue);
                     HealthManager HealthCIble = _TransformsHits[i].GetComponent<HealthManager>();
                     HealthCIble.heal(mySkill._healValue);
                 }
