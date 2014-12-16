@@ -436,6 +436,7 @@ public class NetworkManager : MonoBehaviour
     private void spawnPlayer()
     {
         _canvasPlayers.SetActive(false);
+        Application.LoadLevel("Dungeon1");
         Network.Instantiate(_playerPrefab, Vector3.up * 5, Quaternion.identity, 0);
     }
 
