@@ -43,7 +43,12 @@ public class TimeLine : MonoBehaviour {
     [SerializeField]
     RectTransform           _panelPrefabForComp4;
     [SerializeField]
-    RectTransform           _panelPrefabForComp5;  
+    RectTransform           _panelPrefabForComp5;
+
+    GameObject _mynetwork;
+    NetworkManager _mynetworkmanager;
+
+    bool _init = true;
 
     //text numbers
     [SerializeField]
@@ -53,7 +58,7 @@ public class TimeLine : MonoBehaviour {
    |   Start : Fonction d'initialisation                       |
    \***********************************************************/
    void Start () {
-       _myPlayerSkillResolver = _myPlayer.GetComponent<PlayerSkillResolver>();
+       _mynetwork = GameObject.Find("NetworkManager");
        _myActionBar = _myActionBarCanevas.GetComponent<ActionBar>();
 	}
 
@@ -62,6 +67,12 @@ public class TimeLine : MonoBehaviour {
     \*****************************************************************************************/
    void Update()
    {
+       if (_mynetwork.GetComponent<NetworkManager>().init && _init)
+       {
+           _myPlayer = _mynetwork.GetComponent<NetworkManager>()._myPlayer.transform;
+           _myPlayerSkillResolver = _myPlayer.GetComponent<PlayerSkillResolver>();
+           _init = false;
+       }
 
        if (Input.GetKeyDown("space"))
        {

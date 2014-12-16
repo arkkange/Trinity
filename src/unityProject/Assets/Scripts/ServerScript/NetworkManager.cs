@@ -5,13 +5,15 @@ using System.Collections.Generic;
 
 public class NetworkManager : MonoBehaviour
 {
-    private const string _gameName = "Dungeon Trinity";
+    public string _gameName = "Dungeon Trinity";
     private bool _isRefreshingHostList = false;
     private HostData[] _hostList;
     private int _numberOfPlayer = 0;
     private string _mapName = "Map no1";
 
-    private GameObject _playerPrefab;
+    public bool init = false;
+    public GameObject _myPlayer;
+    public GameObject _playerPrefab;
     [SerializeField]
     private GameObject _warriorPrefab;
     [SerializeField]
@@ -435,9 +437,25 @@ public class NetworkManager : MonoBehaviour
     \*********************************************************************/
     private void spawnPlayer()
     {
+        Vector3 pos = Vector3.up;
+
         _canvasPlayers.SetActive(false);
-        Application.LoadLevel("Dungeon1");
-        Network.Instantiate(_playerPrefab, Vector3.up * 5, Quaternion.identity, 0);
+        if (_playerPrefab.name == "Player_archer")
+        {
+            pos = new Vector3(-1.5f, 0f, -4.5f);
+        }
+        if (_playerPrefab.name == "Player_priest")
+        {
+            pos = new Vector3(1.5f, 0f, -4.5f);
+        }
+        if (_playerPrefab.name == "Player_warrior")
+        {
+            pos = new Vector3(0.5f, 0f, -3.0f);
+        }
+
+        _myPlayer = Network.Instantiate(_playerPrefab, pos, Quaternion.identity, 0) as GameObject;
+        init = true;
+
     }
 
 }
