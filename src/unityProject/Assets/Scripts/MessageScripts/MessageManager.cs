@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class MessageManager : MonoBehaviour {
 
-
     [SerializeField]
     RectTransform _myCanevas;
 

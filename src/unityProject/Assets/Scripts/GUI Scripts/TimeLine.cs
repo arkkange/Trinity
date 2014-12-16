@@ -6,6 +6,13 @@ using UnityEngine.UI;
 
 public class TimeLine : MonoBehaviour {
 
+    [SerializeField]
+    Transform _myPlayer;
+    PlayerSkillResolver _myPlayerSkillResolver;
+
+    [SerializeField]
+    Transform _myActionBarCanevas;
+    ActionBar _myActionBar;
 
     [SerializeField]
     Transform   MessageManager;
@@ -46,32 +53,33 @@ public class TimeLine : MonoBehaviour {
    |   Start : Fonction d'initialisation                       |
    \***********************************************************/
    void Start () {
-
-       //exemple of add a skill
-
-       //Skill s = new Skill(1, new Vector3(0, 0, 0), Quaternion.identity, 1, 3, 20, 100, true, 0, false, true, false);
-       //addSkill(s);
-
-       //s = new Skill(2, new Vector3(0, 0, 0), Quaternion.identity, 1, 2, 20, 100, true, 0, false, true, false);
-       //addSkill(s);
-
-       //s = new Skill(3, new Vector3(0, 0, 0), Quaternion.identity, 1, 3, 20, 100, true, 0, false, true, false);
-       //addSkill(s);
-
-       //s = new Skill(2, new Vector3(0, 0, 0), Quaternion.identity, 1, 1, 20, 100, true, 0, false, true, false);
-       //addSkill(s);
-
+       _myPlayerSkillResolver = _myPlayer.GetComponent<PlayerSkillResolver>();
+       _myActionBar = _myActionBarCanevas.GetComponent<ActionBar>();
 	}
+
+   /******************************************************************************************\
+    |   Update : This function is called every fixed framerate frame                          |
+    \*****************************************************************************************/
+   void Update()
+   {
+
+       if (Input.GetKeyDown("space"))
+       {
+           resolveTimeLIne();
+       }
+
+   }
 
     /***********************************************************\
     |   addSkill : ajoute un skill a la liste                   |
     \***********************************************************/
-    void addSkill(Skill newSkill)
+    public bool addSkill(Skill newSkill)
     {
 
         if ( (newSkill._castTime + _actualTime) > _maxTime )
         {
             MessageManager.GetComponent<MessageManager>().CreateShortMessage(2, "Vous ne pouvez pas ajouter cette compétence a votre TimeLine");
+            return false;
         }
         else
         {
@@ -126,9 +134,6 @@ public class TimeLine : MonoBehaviour {
 
             _portionsTimeLine.Add(_newPortion);
 
-
-
-
             //creation of the text indicator
             RectTransform newText = Instantiate(_textPrefab) as RectTransform;
 
@@ -158,6 +163,8 @@ public class TimeLine : MonoBehaviour {
             _actualTime += (int)newSkill._castTime;
 
             _cancelButton.SetActive(true);
+
+            return true;
         }
         
     }
@@ -192,6 +199,32 @@ public class TimeLine : MonoBehaviour {
             _cancelButton.SetActive(false);
         }
 
+    }
+
+    /*****************************************************************************************\
+    |   resolveTimeLIne : Resoud dans l'ordre chronologique chacun des skills de la liste |
+    \*****************************************************************************************/
+    void resolveTimeLIne()
+    {
+        _myActionBar.clearActions();
+        StartCoroutine(ResolveAllSkills());
+    }
+
+    IEnumerator ResolveAllSkills()
+    {
+        for (int i = 0; i < _skillList.Count ; i++)
+        {
+            _myPlayerSkillResolver.ResolveSkill(_skillList[i]);
+            yield return new WaitForSeconds(_skillList[i]._castTime);            
+        }
+
+        timeLineResolved();
+    }
+
+    void timeLineResolved()
+    {
+        //actions a faire a la fin de la résolution de la timeline
+        _myActionBar.clearActions();
     }
 
 }
