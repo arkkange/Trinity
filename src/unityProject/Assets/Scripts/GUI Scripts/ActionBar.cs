@@ -87,14 +87,18 @@ public class ActionBar : MonoBehaviour {
     Text _endMovementRingText;
     List<Transform> _listOfRingsOfMovements = new List<Transform>();
 
+    GameObject _mynetwork;
+    NetworkManager _mynetworkmanager;
+    bool _init = true;
+
+
 	// Use this for initialization
 	void Start () {
+        _mynetwork = GameObject.Find("NetworkManager");
 
         //getcomponents a récupérer pour économiser la mémoire
         _mytimeLine = _myTimeLineObject.GetComponent<TimeLine>();
         _myLine = _myLineRenderObject.GetComponent<LineRenderer>();
-        _myPlayerSKillResolver = _myPlayer.GetComponent<PlayerSkillResolver>();
-        _MoveList.Add(_myPlayer.position);
 
         _activeSkill1           = false;
         _activeSkill2           = false;
@@ -113,6 +117,13 @@ public class ActionBar : MonoBehaviour {
 	// Update is called once per frame
     void Update()
     {
+        if (_mynetwork.GetComponent<NetworkManager>().init && _init)
+        {
+            _myPlayer = _mynetwork.GetComponent<NetworkManager>()._myPlayer.transform;
+            _myPlayerSKillResolver = _myPlayer.GetComponent<PlayerSkillResolver>();
+            _MoveList.Add(_myPlayer.position);
+            _init = false;
+        }
 
         //case skill 1 active
         if (_activeSkill1)

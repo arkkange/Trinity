@@ -354,6 +354,7 @@ GameObject:
   - 148: {fileID: 14800000}
   - 114: {fileID: 11400020}
   - 114: {fileID: 11400022}
+  - 148: {fileID: 14800002}
   m_Layer: 8
   m_Name: Player_warrior
   m_TagString: Player
@@ -1152,6 +1153,18 @@ SphereCollider:
   m_Radius: .899259388
   m_Center: {x: 0, y: 0, z: .012729113}
 --- !u!148 &14800000
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100040}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 400026}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
+--- !u!148 &14800002
 NetworkView:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

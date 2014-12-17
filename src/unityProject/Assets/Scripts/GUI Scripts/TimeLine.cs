@@ -43,17 +43,30 @@ public class TimeLine : MonoBehaviour {
     [SerializeField]
     RectTransform           _panelPrefabForComp4;
     [SerializeField]
-    RectTransform           _panelPrefabForComp5;  
+    RectTransform           _panelPrefabForComp5;
+
+    GameObject _mynetwork;
+    NetworkManager _mynetworkmanager;
+
+    bool _init = true;
 
     //text numbers
     [SerializeField]
     RectTransform           _textPrefab;
 
+    [SerializeField]
+    Canvas _canvasReady;
+
+    bool _playerW = false;
+    bool _playerP = false;
+    bool _playerA = false;
+
+
    /***********************************************************\
    |   Start : Fonction d'initialisation                       |
    \***********************************************************/
    void Start () {
-       _myPlayerSkillResolver = _myPlayer.GetComponent<PlayerSkillResolver>();
+       _mynetwork = GameObject.Find("NetworkManager");
        _myActionBar = _myActionBarCanevas.GetComponent<ActionBar>();
 	}
 
@@ -62,11 +75,77 @@ public class TimeLine : MonoBehaviour {
     \*****************************************************************************************/
    void Update()
    {
-
-       if (Input.GetKeyDown("space"))
+       if (!_init)
        {
+           if (_canvasReady.transform.GetComponent<PlayerIsReadyManager>()._buttonIsReady.active)
+           {
+               setReady();
+
+           }
+       }
+      
+
+       if (_mynetwork.GetComponent<NetworkManager>().init && _init)
+       {
+           _myPlayer = _mynetwork.GetComponent<NetworkManager>()._myPlayer.transform;
+           _myPlayerSkillResolver = _myPlayer.GetComponent<PlayerSkillResolver>();
+           _init = false;
+       }
+
+       if (_playerA && _playerP && _playerW)
+       {
+           _canvasReady.transform.GetComponent<PlayerIsReadyManager>().UnactiveReady();
+           _canvasReady.transform.GetComponent<PlayerIsReadyManager>().ActiveNotReady();
+           _playerA = false;
+           _playerP = false;
+           _playerW = false;
            resolveTimeLIne();
        }
+
+   }
+
+   public void setReady()
+   {
+       if (_myPlayer.name == "Player_warrior(Clone)")
+       {
+           _playerW = true;
+       }
+       else if (_myPlayer.name == "Player_priest(Clone)")
+       {
+           _playerP = true;
+       }
+       else if (_myPlayer.name == "Player_archer(Clone)")
+       {
+           _playerA = true;
+       }
+       networkView.RPC("SetReadyRPC", RPCMode.OthersBuffered, _playerW,_playerP,_playerA);
+   }
+
+    
+   public void setNonReady()
+   {
+       if (_myPlayer.name == "Player_warrior(Clone)")
+       {
+           _playerW = false;
+       }
+       else if (_myPlayer.name == "Player_priest(Clone)")
+       {
+           _playerP = false;
+       }
+       else if (_myPlayer.name == "Player_archer(Clone)")
+       {
+           _playerA = false;
+       }
+       networkView.RPC("SetReadyRPC", RPCMode.OthersBuffered, _playerW,_playerP,_playerA);
+   }
+
+
+   [RPC]
+   void SetReadyRPC(bool PlW, bool PlP, bool PlA)
+   {
+       _playerW = PlW;
+       _playerP = PlP;
+       _playerA = PlA;
 
    }
 
@@ -208,6 +287,7 @@ public class TimeLine : MonoBehaviour {
     {
         _myActionBar.clearActions();
         StartCoroutine(ResolveAllSkills());
+        removeLastSkill();
     }
 
     IEnumerator ResolveAllSkills()
@@ -224,6 +304,7 @@ public class TimeLine : MonoBehaviour {
     void timeLineResolved()
     {
         //actions a faire a la fin de la résolution de la timeline
+        _skillList.Clear();
         _myActionBar.clearActions();
     }
 
