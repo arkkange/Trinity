@@ -287,7 +287,6 @@ public class TimeLine : MonoBehaviour {
     {
         _myActionBar.clearActions();
         StartCoroutine(ResolveAllSkills());
-        removeLastSkill();
     }
 
     IEnumerator ResolveAllSkills()
@@ -303,8 +302,8 @@ public class TimeLine : MonoBehaviour {
 
     void timeLineResolved()
     {
-        //actions a faire a la fin de la résolution de la timeline
         _skillList.Clear();
+        //actions a faire a la fin de la résolution de la timeline
         _myActionBar.clearActions();
     }
 
