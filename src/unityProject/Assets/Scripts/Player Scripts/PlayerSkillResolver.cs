@@ -70,12 +70,15 @@ public class PlayerSkillResolver : MonoBehaviour
 
         switch (mySkill._type)
         {
+		case 0:
+			StartCoroutine(resolveCone(mySkill) );
+			break;
             case 1: //circle
-                StartCoroutine(resolveCircle(mySkill) );
+			StartCoroutine(resolveCircle(mySkill) );
                 break;
 
             case 2: //cone
-                StartCoroutine(resolveCone(mySkill) );
+
                 break;
 
             case 3: //Line

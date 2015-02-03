@@ -109,6 +109,8 @@ public class TimeLine : MonoBehaviour {
        if (_myPlayer.name == "Player_warrior(Clone)")
        {
            _playerW = true;
+			_playerP = true;
+			_playerA = true;
        }
        else if (_myPlayer.name == "Player_priest(Clone)")
        {
@@ -194,49 +196,7 @@ public class TimeLine : MonoBehaviour {
                     break;
             }
 
-            //fill the image to the bar
-            _newPortion.parent = _timeLinePanel;
-            _newPortion.active = true;
-            _newPortion.localScale = new Vector3(1, 1, 1);
-
-            _newPortion.anchoredPosition = new Vector2(0.5f, 0.5f);
-
-            _newPortion.localPosition = new Vector3(0, 0, 0);
-            _newPortion.sizeDelta = new Vector2(0, 0);          //The normalized position in the parent RectTransform that the lower left corner is anchored to.
-            _newPortion.offsetMax = new Vector2(0, 0);          //The offset of the upper right corner of the rectangle relative to the upper right anchor.
-            _newPortion.offsetMin = new Vector2(0, 0);          //The size of this RectTransform relative to the distances between the anchors.
-
-            //anchors positions according to the actual X anchor
-            _newPortion.anchorMin = new Vector2(_actualAnchorX, 0);
-            _newPortion.anchorMax = new Vector2(_actualAnchorX + (newSkill._castTime / 10), 1);
-            
-
-            _portionsTimeLine.Add(_newPortion);
-
-            //creation of the text indicator
-            RectTransform newText = Instantiate(_textPrefab) as RectTransform;
-
-            //fill the image to the bar
-            newText.parent = _timeLinePanel;
-            newText.active = true;
-            newText.localScale = new Vector3(1, 1, 1);
-
-            newText.anchoredPosition = new Vector2(0.5f, 0.5f);
-            newText.localPosition = new Vector3(5, 5, 0);
-            newText.sizeDelta = new Vector2(5, 5);
-            newText.offsetMax = new Vector2(0, 0);
-            newText.offsetMin = new Vector2(0, 0);
-
-            //anchors positions according to the actual X anchor
-            newText.anchorMin = new Vector2(_actualAnchorX, 0);
-            newText.anchorMax = new Vector2(_actualAnchorX + (newSkill._castTime / 10), 1);
-            
-            //maj anchors
-            _actualAnchorX = _actualAnchorX + (newSkill._castTime / 10);
-
-            //fill the correct text then add to the list
-            newText.GetComponent<Text>().text = (string)((int)(_actualAnchorX*10) + "");
-            _textPortionTimeLine.Add(newText);
+			positionSkillsList(_newPortion, newSkill);
 
             //mise a jour du temps de cast total
             _actualTime += (int)newSkill._castTime;
@@ -262,6 +222,8 @@ public class TimeLine : MonoBehaviour {
         //suppression de la liste des skills
         _skillList.RemoveAt(_skillList.Count - 1);
 
+		_actualAnchorX -= (_portionsTimeLine [_portionsTimeLine.Count - 1].anchorMax.x - _portionsTimeLine [_portionsTimeLine.Count - 1].anchorMin.x);
+
         //supression de l'object de la timeLine
         portionToDelete = _portionsTimeLine[_portionsTimeLine.Count - 1];
         Destroy(portionToDelete.gameObject);
@@ -280,6 +242,53 @@ public class TimeLine : MonoBehaviour {
 
     }
 
+	void positionSkillsList(RectTransform _newPortion, Skill newSkill)
+	{
+		//fill the image to the bar
+		_newPortion.parent = _timeLinePanel;
+		_newPortion.active = true;
+		_newPortion.localScale = new Vector3(1, 1, 1);
+		
+		_newPortion.anchoredPosition = new Vector2(0.5f, 0.5f);
+		
+		_newPortion.localPosition = new Vector3(0, 0, 0);
+		_newPortion.sizeDelta = new Vector2(0, 0);          //The normalized position in the parent RectTransform that the lower left corner is anchored to.
+		_newPortion.offsetMax = new Vector2(0, 0);          //The offset of the upper right corner of the rectangle relative to the upper right anchor.
+		_newPortion.offsetMin = new Vector2(0, 0);          //The size of this RectTransform relative to the distances between the anchors.
+		
+		//anchors positions according to the actual X anchor
+		_newPortion.anchorMin = new Vector2(_actualAnchorX, 0);
+		_newPortion.anchorMax = new Vector2(_actualAnchorX + (newSkill._castTime / 10), 1);
+		
+		
+		_portionsTimeLine.Add(_newPortion);
+		
+		//creation of the text indicator
+		RectTransform newText = Instantiate(_textPrefab) as RectTransform;
+		
+		//fill the image to the bar
+		newText.parent = _timeLinePanel;
+		newText.active = true;
+		newText.localScale = new Vector3(1, 1, 1);
+		
+		newText.anchoredPosition = new Vector2(0.5f, 0.5f);
+		newText.localPosition = new Vector3(5, 5, 0);
+		newText.sizeDelta = new Vector2(5, 5);
+		newText.offsetMax = new Vector2(0, 0);
+		newText.offsetMin = new Vector2(0, 0);
+		
+		//anchors positions according to the actual X anchor
+		newText.anchorMin = new Vector2(_actualAnchorX, 0);
+		newText.anchorMax = new Vector2(_actualAnchorX + (newSkill._castTime / 10), 1);
+		
+		//maj anchors
+		_actualAnchorX = _actualAnchorX + (newSkill._castTime / 10);
+		
+		//fill the correct text then add to the list
+		newText.GetComponent<Text>().text = (string)((int)(_actualAnchorX*10) + "");
+		_textPortionTimeLine.Add(newText);
+	}
+
     /*****************************************************************************************\
     |   resolveTimeLIne : Resoud dans l'ordre chronologique chacun des skills de la liste |
     \*****************************************************************************************/
@@ -297,10 +306,10 @@ public class TimeLine : MonoBehaviour {
             yield return new WaitForSeconds(_skillList[i]._castTime);            
         }
 
-        timeLineResolved();
+        timeLineResolve ();
     }
 
-    void timeLineResolved()
+    void timeLineResolve	()
     {
         _skillList.Clear();
         //actions a faire a la fin de la résolution de la timeline

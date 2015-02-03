@@ -152,7 +152,7 @@ public class NetworkManager : MonoBehaviour
         }
 
         //Si on est le serveur et le nombre de joueurs est de 3
-        if (Network.isServer && _listPlayers.Count == 3)
+        if (Network.isServer && _listPlayers.Count >= 1)
         {
             _buttonValLobby.SetActive(true);
         }

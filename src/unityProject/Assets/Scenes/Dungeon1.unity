@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -172,6 +171,7 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!1 &16668280
@@ -398,7 +398,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 52532628}
-  m_HideIfInvisible: 0
 --- !u!1 &57560681
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +469,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1831235777}
   m_GameObject: {fileID: 57560681}
-  m_HideIfInvisible: 0
 --- !u!1 &96123140
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +535,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 96123140}
-  m_HideIfInvisible: 0
 --- !u!1 &96826056
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,7 +893,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1831235777}
   m_GameObject: {fileID: 119366363}
-  m_HideIfInvisible: 0
 --- !u!1001 &132825384
 Prefab:
   m_ObjectHideFlags: 0
@@ -1070,7 +1066,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -1091,6 +1086,7 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!224 &135904985
@@ -1188,7 +1184,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 134620134}
   m_GameObject: {fileID: 169104891}
-  m_HideIfInvisible: 1
 --- !u!1 &169272446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,7 +1266,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -1292,6 +1286,7 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!1 &187978078
@@ -1442,7 +1437,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 209698255}
-  m_HideIfInvisible: 0
 --- !u!1 &211488324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,7 +1502,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 132825384}
   m_GameObject: {fileID: 211488324}
-  m_HideIfInvisible: 1
 --- !u!1 &237028742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,7 +1738,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 244874542}
-  m_HideIfInvisible: 0
 --- !u!224 &244874545
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1824,6 +1816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
+  m_DragThreshold: 5
 --- !u!4 &246119452
 Transform:
   m_ObjectHideFlags: 0
@@ -1982,7 +1975,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -2003,6 +1995,7 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!1 &332752329
@@ -2085,7 +2078,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1991357511}
   m_GameObject: {fileID: 332752329}
-  m_HideIfInvisible: 0
 --- !u!1 &339658816
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,7 +2198,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 339658816}
-  m_HideIfInvisible: 0
 --- !u!1 &365696159
 GameObject:
   m_ObjectHideFlags: 0
@@ -2366,6 +2357,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 169272448}
+        m_MethodName: removeLastSkill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &374929864
@@ -2397,7 +2400,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 850397471}
   m_GameObject: {fileID: 374929861}
-  m_HideIfInvisible: 0
 --- !u!1 &387785871
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,7 +2451,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1183699086}
   m_GameObject: {fileID: 387785871}
-  m_HideIfInvisible: 0
 --- !u!224 &387785874
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2532,7 +2533,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 398568640}
-  m_HideIfInvisible: 0
 --- !u!1 &420285783
 GameObject:
   m_ObjectHideFlags: 0
@@ -2641,7 +2641,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1831235777}
   m_GameObject: {fileID: 420285783}
-  m_HideIfInvisible: 0
 --- !u!1 &420445621
 GameObject:
   m_ObjectHideFlags: 0
@@ -2778,7 +2777,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 425368258}
-  m_HideIfInvisible: 0
 --- !u!1 &439210073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2899,7 +2897,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 439210073}
-  m_HideIfInvisible: 0
 --- !u!1 &444348066
 GameObject:
   m_ObjectHideFlags: 0
@@ -2965,7 +2962,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1285597858}
   m_GameObject: {fileID: 444348066}
-  m_HideIfInvisible: 1
 --- !u!1 &450286584
 GameObject:
   m_ObjectHideFlags: 0
@@ -3098,7 +3094,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -3119,6 +3114,7 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!1 &457628366
@@ -3379,7 +3375,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 486421693}
-  m_HideIfInvisible: 0
 --- !u!1 &508458128
 GameObject:
   m_ObjectHideFlags: 0
@@ -3446,7 +3441,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 508458128}
-  m_HideIfInvisible: 0
 --- !u!1 &512271240
 GameObject:
   m_ObjectHideFlags: 0
@@ -3511,7 +3505,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 512271240}
-  m_HideIfInvisible: 0
 --- !u!1 &536629330
 GameObject:
   m_ObjectHideFlags: 0
@@ -3645,7 +3638,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 132825384}
   m_GameObject: {fileID: 543547145}
-  m_HideIfInvisible: 1
 --- !u!1 &576788709
 GameObject:
   m_ObjectHideFlags: 0
@@ -3933,7 +3925,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1285597858}
   m_GameObject: {fileID: 670065772}
-  m_HideIfInvisible: 0
 --- !u!1 &672371120
 GameObject:
   m_ObjectHideFlags: 0
@@ -4058,7 +4049,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -4079,6 +4069,7 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!1 &694417622
@@ -4145,7 +4136,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 694417622}
-  m_HideIfInvisible: 0
 --- !u!1 &706600689
 GameObject:
   m_ObjectHideFlags: 0
@@ -4210,7 +4200,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 706600689}
-  m_HideIfInvisible: 0
 --- !u!1 &719490806
 GameObject:
   m_ObjectHideFlags: 0
@@ -4275,7 +4264,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 719490806}
-  m_HideIfInvisible: 0
 --- !u!1 &735556282
 GameObject:
   m_ObjectHideFlags: 0
@@ -4396,7 +4384,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 735556282}
-  m_HideIfInvisible: 0
 --- !u!1 &738164429
 GameObject:
   m_ObjectHideFlags: 0
@@ -4462,7 +4449,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 850397471}
   m_GameObject: {fileID: 738164429}
-  m_HideIfInvisible: 0
 --- !u!1 &740913135
 GameObject:
   m_ObjectHideFlags: 0
@@ -4610,7 +4596,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1285597858}
   m_GameObject: {fileID: 788287235}
-  m_HideIfInvisible: 1
 --- !u!1 &794048249
 GameObject:
   m_ObjectHideFlags: 0
@@ -4731,7 +4716,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 794048249}
-  m_HideIfInvisible: 0
 --- !u!1 &795766750
 GameObject:
   m_ObjectHideFlags: 0
@@ -4803,7 +4787,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1831235777}
   m_GameObject: {fileID: 795766750}
-  m_HideIfInvisible: 0
 --- !u!1 &796389573
 GameObject:
   m_ObjectHideFlags: 0
@@ -4912,7 +4895,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1831235777}
   m_GameObject: {fileID: 796389573}
-  m_HideIfInvisible: 0
 --- !u!1 &825860615
 GameObject:
   m_ObjectHideFlags: 0
@@ -4973,7 +4955,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1991357511}
   m_GameObject: {fileID: 825860615}
-  m_HideIfInvisible: 1
 --- !u!224 &825860619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5069,7 +5050,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -5090,6 +5070,7 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!1001 &850397471
@@ -5099,6 +5080,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400004, guid: ca169479ab313d34c8516d450a69309f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 22400008, guid: ca169479ab313d34c8516d450a69309f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5194,6 +5179,26 @@ Prefab:
     - target: {fileID: 100008, guid: ca169479ab313d34c8516d450a69309f, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: ca169479ab313d34c8516d450a69309f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: ca169479ab313d34c8516d450a69309f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: ca169479ab313d34c8516d450a69309f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 169272448}
+    - target: {fileID: 11400004, guid: ca169479ab313d34c8516d450a69309f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: removeLastSkill
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: ca169479ab313d34c8516d450a69309f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca169479ab313d34c8516d450a69309f, type: 2}
@@ -5454,7 +5459,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1183699086}
   m_GameObject: {fileID: 857129632}
-  m_HideIfInvisible: 0
 --- !u!1 &865533664
 GameObject:
   m_ObjectHideFlags: 0
@@ -5519,7 +5523,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1285597858}
   m_GameObject: {fileID: 865533664}
-  m_HideIfInvisible: 1
 --- !u!1 &865671494
 GameObject:
   m_ObjectHideFlags: 0
@@ -5584,7 +5587,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1875982816}
   m_GameObject: {fileID: 865671494}
-  m_HideIfInvisible: 1
 --- !u!1 &881777694
 GameObject:
   m_ObjectHideFlags: 0
@@ -5665,7 +5667,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 881777694}
-  m_HideIfInvisible: 0
 --- !u!1 &884098288
 GameObject:
   m_ObjectHideFlags: 0
@@ -5731,7 +5732,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1691429529}
   m_GameObject: {fileID: 884098288}
-  m_HideIfInvisible: 1
 --- !u!1 &884154497
 GameObject:
   m_ObjectHideFlags: 0
@@ -5796,7 +5796,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 850397471}
   m_GameObject: {fileID: 884154497}
-  m_HideIfInvisible: 0
 --- !u!1 &901171464
 GameObject:
   m_ObjectHideFlags: 0
@@ -5946,7 +5945,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 903511939}
-  m_HideIfInvisible: 0
 --- !u!1 &913945801
 GameObject:
   m_ObjectHideFlags: 0
@@ -6027,7 +6025,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1875982816}
   m_GameObject: {fileID: 913945801}
-  m_HideIfInvisible: 0
 --- !u!1 &948397818
 GameObject:
   m_ObjectHideFlags: 0
@@ -6093,7 +6090,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 134620134}
   m_GameObject: {fileID: 948397818}
-  m_HideIfInvisible: 1
 --- !u!1 &965848901
 GameObject:
   m_ObjectHideFlags: 0
@@ -6163,7 +6159,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1183699086}
   m_GameObject: {fileID: 965848901}
-  m_HideIfInvisible: 0
 --- !u!1 &982016129
 GameObject:
   m_ObjectHideFlags: 0
@@ -6418,7 +6413,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 1002233043}
-  m_HideIfInvisible: 0
 --- !u!1 &1005076850
 GameObject:
   m_ObjectHideFlags: 0
@@ -6559,7 +6553,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1831235777}
   m_GameObject: {fileID: 1051145183}
-  m_HideIfInvisible: 0
 --- !u!1 &1058798378
 GameObject:
   m_ObjectHideFlags: 0
@@ -6742,7 +6735,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 1065233951}
-  m_HideIfInvisible: 0
 --- !u!1 &1101397269
 GameObject:
   m_ObjectHideFlags: 0
@@ -6917,7 +6909,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1691429529}
   m_GameObject: {fileID: 1108583197}
-  m_HideIfInvisible: 1
 --- !u!1 &1113762260
 GameObject:
   m_ObjectHideFlags: 0
@@ -7038,7 +7029,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 1113762260}
-  m_HideIfInvisible: 0
 --- !u!1001 &1158083305
 Prefab:
   m_ObjectHideFlags: 0
@@ -7422,7 +7412,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 850397471}
   m_GameObject: {fileID: 1196527375}
-  m_HideIfInvisible: 0
 --- !u!1 &1200763358
 GameObject:
   m_ObjectHideFlags: 0
@@ -7558,7 +7547,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 850397471}
   m_GameObject: {fileID: 1213563642}
-  m_HideIfInvisible: 0
 --- !u!1 &1218737109
 GameObject:
   m_ObjectHideFlags: 0
@@ -7637,7 +7625,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1691429529}
   m_GameObject: {fileID: 1218737109}
-  m_HideIfInvisible: 1
 --- !u!1 &1250852439
 GameObject:
   m_ObjectHideFlags: 0
@@ -7854,7 +7841,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 134620134}
   m_GameObject: {fileID: 1279162268}
-  m_HideIfInvisible: 1
 --- !u!1001 &1285597858
 Prefab:
   m_ObjectHideFlags: 0
@@ -7972,7 +7958,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1297107989}
-  m_HideIfInvisible: 0
 --- !u!1 &1304709878
 GameObject:
   m_ObjectHideFlags: 0
@@ -8081,7 +8066,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1831235777}
   m_GameObject: {fileID: 1304709878}
-  m_HideIfInvisible: 0
 --- !u!1 &1305583889
 GameObject:
   m_ObjectHideFlags: 0
@@ -8215,7 +8199,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1183699086}
   m_GameObject: {fileID: 1305583889}
-  m_HideIfInvisible: 0
 --- !u!1 &1307478648
 GameObject:
   m_ObjectHideFlags: 0
@@ -8474,7 +8457,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 1351956159}
-  m_HideIfInvisible: 0
 --- !u!1 &1377308810
 GameObject:
   m_ObjectHideFlags: 0
@@ -8704,7 +8686,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1831235777}
   m_GameObject: {fileID: 1379965174}
-  m_HideIfInvisible: 0
 --- !u!1 &1393538486
 GameObject:
   m_ObjectHideFlags: 0
@@ -8955,7 +8936,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 134620134}
   m_GameObject: {fileID: 1408373453}
-  m_HideIfInvisible: 0
 --- !u!224 &1408373457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9178,7 +9158,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 850397471}
   m_GameObject: {fileID: 1471878657}
-  m_HideIfInvisible: 0
 --- !u!1 &1474301190
 GameObject:
   m_ObjectHideFlags: 0
@@ -9314,7 +9293,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1183699086}
   m_GameObject: {fileID: 1507758984}
-  m_HideIfInvisible: 0
 --- !u!1 &1542590976
 GameObject:
   m_ObjectHideFlags: 0
@@ -9443,7 +9421,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1183699086}
   m_GameObject: {fileID: 1549294033}
-  m_HideIfInvisible: 0
 --- !u!1 &1550864393
 GameObject:
   m_ObjectHideFlags: 0
@@ -9626,7 +9603,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1831235777}
   m_GameObject: {fileID: 1569756861}
-  m_HideIfInvisible: 0
 --- !u!1 &1588277846
 GameObject:
   m_ObjectHideFlags: 0
@@ -9691,7 +9667,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 1588277846}
-  m_HideIfInvisible: 0
 --- !u!1 &1591818747
 GameObject:
   m_ObjectHideFlags: 0
@@ -9800,7 +9775,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1831235777}
   m_GameObject: {fileID: 1591818747}
-  m_HideIfInvisible: 0
 --- !u!1 &1592062445
 GameObject:
   m_ObjectHideFlags: 0
@@ -9878,7 +9852,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -9899,6 +9872,7 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!1 &1606132137
@@ -9965,7 +9939,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 1606132137}
-  m_HideIfInvisible: 0
 --- !u!1 &1607565419
 GameObject:
   m_ObjectHideFlags: 0
@@ -10046,7 +10019,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1691429529}
   m_GameObject: {fileID: 1607565419}
-  m_HideIfInvisible: 0
 --- !u!1 &1632911591
 GameObject:
   m_ObjectHideFlags: 0
@@ -10193,7 +10165,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -10214,6 +10185,7 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!1 &1662755064
@@ -10282,7 +10254,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 1662755064}
-  m_HideIfInvisible: 0
 --- !u!1001 &1669496288
 Prefab:
   m_ObjectHideFlags: 0
@@ -10461,7 +10432,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 1688359779}
-  m_HideIfInvisible: 0
 --- !u!1 &1689710546
 GameObject:
   m_ObjectHideFlags: 0
@@ -10748,7 +10718,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1991357511}
   m_GameObject: {fileID: 1713320698}
-  m_HideIfInvisible: 1
 --- !u!1 &1727899925
 GameObject:
   m_ObjectHideFlags: 0
@@ -10893,7 +10862,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 1733378323}
-  m_HideIfInvisible: 0
 --- !u!1 &1747292259
 GameObject:
   m_ObjectHideFlags: 0
@@ -11014,7 +10982,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 1747292259}
-  m_HideIfInvisible: 0
 --- !u!1 &1748681679
 GameObject:
   m_ObjectHideFlags: 0
@@ -11079,7 +11046,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 1748681679}
-  m_HideIfInvisible: 0
 --- !u!1 &1753548498
 GameObject:
   m_ObjectHideFlags: 0
@@ -11201,7 +11167,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 1753548498}
-  m_HideIfInvisible: 0
 --- !u!1 &1767832337
 GameObject:
   m_ObjectHideFlags: 0
@@ -11273,7 +11238,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1831235777}
   m_GameObject: {fileID: 1767832337}
-  m_HideIfInvisible: 0
 --- !u!1 &1779541744
 GameObject:
   m_ObjectHideFlags: 0
@@ -11338,7 +11302,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 1779541744}
-  m_HideIfInvisible: 0
 --- !u!1 &1807733592
 GameObject:
   m_ObjectHideFlags: 0
@@ -11404,7 +11367,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1875982816}
   m_GameObject: {fileID: 1807733592}
-  m_HideIfInvisible: 1
 --- !u!1001 &1831235777
 Prefab:
   m_ObjectHideFlags: 0
@@ -11610,7 +11572,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1831235777}
   m_GameObject: {fileID: 1851081105}
-  m_HideIfInvisible: 0
 --- !u!224 &1851081109
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11695,7 +11656,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1991357511}
   m_GameObject: {fileID: 1859164473}
-  m_HideIfInvisible: 1
 --- !u!1001 &1875982816
 Prefab:
   m_ObjectHideFlags: 0
@@ -11830,7 +11790,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1875982816}
   m_GameObject: {fileID: 1879486396}
-  m_HideIfInvisible: 1
 --- !u!1 &1943411561
 GameObject:
   m_ObjectHideFlags: 0
@@ -11889,7 +11848,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -11910,6 +11868,7 @@ Canvas:
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!224 &1943411566
@@ -11991,7 +11950,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 132825384}
   m_GameObject: {fileID: 1945025837}
-  m_HideIfInvisible: 0
 --- !u!224 &1945025841
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12120,7 +12078,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1831235777}
   m_GameObject: {fileID: 1987147642}
-  m_HideIfInvisible: 0
 --- !u!1001 &1991357511
 Prefab:
   m_ObjectHideFlags: 0
@@ -12243,7 +12200,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 2013056389}
-  m_HideIfInvisible: 0
 --- !u!1 &2031015017
 GameObject:
   m_ObjectHideFlags: 0
@@ -12308,7 +12264,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1183699086}
   m_GameObject: {fileID: 2031015017}
-  m_HideIfInvisible: 0
 --- !u!1 &2031124931
 GameObject:
   m_ObjectHideFlags: 0
@@ -12373,7 +12328,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 850397471}
   m_GameObject: {fileID: 2031124931}
-  m_HideIfInvisible: 0
 --- !u!1 &2034224935
 GameObject:
   m_ObjectHideFlags: 0
@@ -12445,7 +12399,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1831235777}
   m_GameObject: {fileID: 2034224935}
-  m_HideIfInvisible: 0
 --- !u!1 &2037964904
 GameObject:
   m_ObjectHideFlags: 0
@@ -12524,7 +12477,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 132825384}
   m_GameObject: {fileID: 2037964904}
-  m_HideIfInvisible: 1
 --- !u!1 &2038930914
 GameObject:
   m_ObjectHideFlags: 0
@@ -12721,7 +12673,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 850397471}
   m_GameObject: {fileID: 2113955724}
-  m_HideIfInvisible: 0
 --- !u!1 &2126988295
 GameObject:
   m_ObjectHideFlags: 0
@@ -12959,7 +12910,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 2128650217}
-  m_HideIfInvisible: 0
 --- !u!1 &2144459873
 GameObject:
   m_ObjectHideFlags: 0
@@ -13149,4 +13099,3 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1669496288}
   m_GameObject: {fileID: 2144465283}
-  m_HideIfInvisible: 0

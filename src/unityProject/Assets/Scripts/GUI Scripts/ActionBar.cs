@@ -80,6 +80,7 @@ public class ActionBar : MonoBehaviour {
 
     [SerializeField]
     Transform _ConePrefab;
+	Transform _mycone;
 
     [SerializeField]
     Transform _endMovementRingPrefab;
@@ -128,7 +129,40 @@ public class ActionBar : MonoBehaviour {
         //case skill 1 active
         if (_activeSkill1)
         {
+			if (Input.GetMouseButtonDown(1) || Input.GetMouseButton(1))    //clic droit
+			{
+				//Creation d'un plan destiné a récupérer la position de l'objet
+				Plane playerPlane = new Plane(Vector3.up, _myPlayer.position);
+				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+				float hitdist = 0.0f;
+				if (playerPlane.Raycast(ray, out hitdist))
+				{
+					
+					_lastPositionClicked = ray.GetPoint(hitdist);
+					
+					if (!_mycone)
+					{
+						_mycone = Instantiate(_ConePrefab) as Transform;
+					}
+					if (_MoveList.Count > 0)
+					{
+						_mycone.position = _MoveList[_MoveList.Count - 1];
+						Debug.Log ("LOOOOL");
+					}
+					else
+					{
+						_mycone.position = _myPlayer.position;
+					}
+					_mycone.localScale = new Vector3(1, 1, 1);
+					//_mycone.position = _myPlayer.position;
+					var rotate = Quaternion.LookRotation ( _lastPositionClicked - _mycone.position).eulerAngles;
 
+					_mycone.rotation = Quaternion.Euler(rotate);
+					
+					_CurrentSkillChoice = new Skill(0, _mycone.position, _mycone.position, _mycone.rotation, 1, 2, 0, 100, true, 200, false, true, true);
+				}
+				
+			}
         }
 
         //case skill 2 active
@@ -204,7 +238,7 @@ public class ActionBar : MonoBehaviour {
                     _mycircle.localScale = new Vector3( 1,1,1);
                     _mycircle.position = _lastPositionClicked;
                     
-                    _CurrentSkillChoice = new Skill(1, _myPlayer.position, _lastPositionClicked, Quaternion.identity, 1, 2, 10, 0, false, 200, false, true, true);
+                    _CurrentSkillChoice = new Skill(1, _myPlayer.position, _lastPositionClicked, Quaternion.identity, 1, 4, 10, 0, false, 200, false, true, true);
                 }
 
             }
@@ -279,6 +313,7 @@ public class ActionBar : MonoBehaviour {
                     //gestion de la ring
                     if (!_endMovementRing)
                     {
+
                         _endMovementRing = Instantiate(_endMovementRingPrefab) as Transform;
                         _endMovementRing.GetComponentInChildren<BarFallowCamera>()._myCamera = _myCamera;
                         _endMovementRingText = _endMovementRing.GetComponentInChildren<Text>();
@@ -358,7 +393,6 @@ public class ActionBar : MonoBehaviour {
             _buttonAction1.active = false;
             _buttonAction1_cancel.active = true;
             _activeSkill1 = true;
-            _buttonValidate.active = false;
 
             //rends inactif 2 3 move et special action
             _buttonAction2.active = true;
@@ -378,6 +412,8 @@ public class ActionBar : MonoBehaviour {
             _activeSpecialAction = false;
 
         }
+		Debug.Log(_buttonValidate.active);
+		Debug.Log("FUCK");
     }
 
     /***********************************************************\
@@ -420,6 +456,7 @@ public class ActionBar : MonoBehaviour {
             _activeSpecialAction = false;
 
         }
+		Debug.Log("FUCK");
     }
 
     /***********************************************************\
@@ -560,14 +597,39 @@ public class ActionBar : MonoBehaviour {
             {
                 _MoveList.Add(_CurrentSkillChoice._location);
 
-                Transform MovementRing = Instantiate(_endMovementRingPrefab) as Transform;
-                MovementRing.GetComponentInChildren<BarFallowCamera>()._myCamera = _myCamera;
-                MovementRing.position = _CurrentSkillChoice._location;
-                MovementRing.GetComponentInChildren<Text>().text = (_MoveList.Count - 1).ToString();
+				Transform MovementRing;
 
-                _listOfRingsOfMovements.Add(MovementRing);
-            }
-            
+				if (_CurrentSkillChoice._type == 4)
+					{
+	                MovementRing = Instantiate(_endMovementRingPrefab) as Transform;
+					MovementRing.GetComponentInChildren<BarFallowCamera>()._myCamera = _myCamera;
+					MovementRing.GetComponentInChildren<Text>().text = _endMovementRingText.text.ToString();
+					Destroy ((_endMovementRing as Transform).gameObject); 
+					MovementRing.position = _CurrentSkillChoice._location;
+					_listOfRingsOfMovements.Add(MovementRing);
+				}
+				if (_CurrentSkillChoice._type == 1) {
+					MovementRing = Instantiate(_ConePrefab) as Transform;
+					Destroy ((_mycone as Transform).gameObject); 
+					MovementRing.position = _CurrentSkillChoice._location;
+					_listOfRingsOfMovements.Add(MovementRing);
+				}
+
+				if (_CurrentSkillChoice._type == 2) {
+					MovementRing = Instantiate(_CirclePrefab) as Transform;
+					Destroy ((_mycircle as Transform).gameObject); 
+					MovementRing.position = _CurrentSkillChoice._location;
+					_listOfRingsOfMovements.Add(MovementRing);
+				}
+
+
+				if (_CurrentSkillChoice._type == 3)
+				{
+
+				}
+                
+			}
+ 
         }
 
     }
@@ -592,6 +654,26 @@ public class ActionBar : MonoBehaviour {
         _myLine.SetPosition(1, new Vector3(0, 0, 0));
 
     }
+
+	public void removeLastSkill(){
+
+		_MoveList.RemoveAt (_MoveList.Count - 1); 
+
+		Vector3 allMoves = new Vector3 (0,0,0);
+
+		for (int i = 0; i < _MoveList.Count; i++) {
+			allMoves += _MoveList[i];
+				}
+
+		_lastPositionClicked = _myPlayer.position + allMoves;
+
+
+		Transform endRingtoDestroy;
+		endRingtoDestroy = _listOfRingsOfMovements [_MoveList.Count - 1];
+		_listOfRingsOfMovements.RemoveAt (_MoveList.Count - 1);
+		Destroy ((endRingtoDestroy as Transform).gameObject); 
+
+	}
 
 
 }
