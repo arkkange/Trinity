@@ -242,8 +242,7 @@ public class TimeLine : MonoBehaviour {
 
     }
 
-	void positionSkillsList(RectTransform _newPortion, Skill newSkill)
-	{
+	void positionSkillsList(RectTransform _newPortion, Skill newSkill) {
 		//fill the image to the bar
 		_newPortion.parent = _timeLinePanel;
 		_newPortion.active = true;
@@ -303,15 +302,21 @@ public class TimeLine : MonoBehaviour {
         for (int i = 0; i < _skillList.Count ; i++)
         {
             _myPlayerSkillResolver.ResolveSkill(_skillList[i]);
+			Debug.Log("lop + " + i);
             yield return new WaitForSeconds(_skillList[i]._castTime);            
         }
-
+		Debug.Log("Over !");
         timeLineResolve ();
     }
 
     void timeLineResolve	()
     {
         _skillList.Clear();
+		for(int i = 0; i <_portionsTimeLine.Count; ++i)
+		{
+			Destroy ((_portionsTimeLine[i] as RectTransform).gameObject);
+		}
+		_portionsTimeLine.Clear();
         //actions a faire a la fin de la résolution de la timeline
         _myActionBar.clearActions();
     }

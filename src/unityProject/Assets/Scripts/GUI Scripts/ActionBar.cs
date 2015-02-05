@@ -113,6 +113,8 @@ public class ActionBar : MonoBehaviour {
         _fallowActiveMovement   = false;
         _fallowActiveAction     = false;
 
+
+		reDrawLine(_myPlayer.position);
 	}
 	
 	// Update is called once per frame
@@ -144,10 +146,10 @@ public class ActionBar : MonoBehaviour {
 					{
 						_mycone = Instantiate(_ConePrefab) as Transform;
 					}
+
 					if (_MoveList.Count > 0)
 					{
 						_mycone.position = _MoveList[_MoveList.Count - 1];
-						Debug.Log ("LOOOOL");
 					}
 					else
 					{
@@ -300,15 +302,17 @@ public class ActionBar : MonoBehaviour {
                     Vector3 myMoveResult = myMove.normalized * PlayerSpeed * numberOfMove;
 
                     //choix des positions de la ligne
-                    if (_MoveList.Count > 0)
+                    /*if (_MoveList.Count > 0)
                     {
-                        _myLine.SetPosition(0, _MoveList[_MoveList.Count - 1]);
+						_myLine.SetPosition(_MoveList.Count - 1, _MoveList[_MoveList.Count - 1]);
                     }
                     else
                     {
                         _myLine.SetPosition(0, _myPlayer.position);
                     }
-                    _myLine.SetPosition(1, _lastPositionClicked);
+					_myLine.SetPosition(_MoveList.Count, _lastPositionClicked);*/
+
+					reDrawLine(_lastPositionClicked);
 
                     //gestion de la ring
                     if (!_endMovementRing)
@@ -382,7 +386,6 @@ public class ActionBar : MonoBehaviour {
             _activeSkill1 = false;
 
             _buttonValidate.active = false;
-            Debug.Log(_buttonValidate.active);
         }
         else
         {
@@ -412,8 +415,8 @@ public class ActionBar : MonoBehaviour {
             _activeSpecialAction = false;
 
         }
-		Debug.Log(_buttonValidate.active);
-		Debug.Log("FUCK");
+
+		destroyVisuals();
     }
 
     /***********************************************************\
@@ -456,7 +459,8 @@ public class ActionBar : MonoBehaviour {
             _activeSpecialAction = false;
 
         }
-		Debug.Log("FUCK");
+
+		destroyVisuals();
     }
 
     /***********************************************************\
@@ -499,6 +503,8 @@ public class ActionBar : MonoBehaviour {
             _activeSpecialAction = false;
 
         }
+
+		destroyVisuals();
     }
 
     /***********************************************************\
@@ -540,6 +546,8 @@ public class ActionBar : MonoBehaviour {
             _buttonSpecialAction_cancel.active = false;
             _activeSpecialAction = false;
         }
+
+		destroyVisuals();
     }
 
     /***********************************************************\
@@ -581,6 +589,8 @@ public class ActionBar : MonoBehaviour {
             _buttonMove_cancel.active = false;
             _activeMovement = false;
         }
+
+		destroyVisuals();
     }
 
     /**************************************************************************************\
@@ -593,8 +603,7 @@ public class ActionBar : MonoBehaviour {
 
         if (isPossible)
         {
-            if (_CurrentSkillChoice._type == 4)
-            {
+
                 _MoveList.Add(_CurrentSkillChoice._location);
 
 				Transform MovementRing;
@@ -608,14 +617,16 @@ public class ActionBar : MonoBehaviour {
 					MovementRing.position = _CurrentSkillChoice._location;
 					_listOfRingsOfMovements.Add(MovementRing);
 				}
-				if (_CurrentSkillChoice._type == 1) {
+				if (_CurrentSkillChoice._type == 0) {
 					MovementRing = Instantiate(_ConePrefab) as Transform;
+					//MovementRing.GetComponentInChildren<BarFallowCamera>()._myCamera = _myCamera; 
 					Destroy ((_mycone as Transform).gameObject); 
-					MovementRing.position = _CurrentSkillChoice._location;
+					MovementRing.position = _CurrentSkillChoice._initialLocation;
+					MovementRing.rotation = _CurrentSkillChoice._rotation; 
 					_listOfRingsOfMovements.Add(MovementRing);
 				}
 
-				if (_CurrentSkillChoice._type == 2) {
+				if (_CurrentSkillChoice._type == 1) {
 					MovementRing = Instantiate(_CirclePrefab) as Transform;
 					Destroy ((_mycircle as Transform).gameObject); 
 					MovementRing.position = _CurrentSkillChoice._location;
@@ -623,14 +634,14 @@ public class ActionBar : MonoBehaviour {
 				}
 
 
-				if (_CurrentSkillChoice._type == 3)
+				if (_CurrentSkillChoice._type == 2)
 				{
 
 				}
                 
 			}
  
-        }
+		reDrawLine(_CurrentSkillChoice._location); 
 
     }
 
@@ -641,17 +652,22 @@ public class ActionBar : MonoBehaviour {
         {
             _MoveList.RemoveAt(i);
         }
-        _MoveList.Add(_myPlayer.position);
+
+        //_MoveList.Add(_myPlayer.position);
 
         //supression de toutes les positions de mouvements
         for (int i = (_listOfRingsOfMovements.Count - 1); i >= 0; i--)
         {
-            Destroy(_listOfRingsOfMovements[i].gameObject);
+            Destroy((_listOfRingsOfMovements[i] as Transform).gameObject);
             _listOfRingsOfMovements.RemoveAt(i);
         }
 
-        _myLine.SetPosition(0, new Vector3(0, 0, 0));
-        _myLine.SetPosition(1, new Vector3(0, 0, 0));
+        /*_myLine.SetPosition(0, new Vector3(0, 0, 0));
+        _myLine.SetPosition(1, new Vector3(0, 0, 0));*/
+
+		destroyVisuals();
+		
+		reDrawLine(_myPlayer.position);
 
     }
 
@@ -662,18 +678,76 @@ public class ActionBar : MonoBehaviour {
 		Vector3 allMoves = new Vector3 (0,0,0);
 
 		for (int i = 0; i < _MoveList.Count; i++) {
-			allMoves += _MoveList[i];
+			allMoves += (_MoveList[i] - allMoves);
 				}
 
-		_lastPositionClicked = _myPlayer.position + allMoves;
+		_lastPositionClicked = _MoveList[_MoveList.Count - 1];
 
 
 		Transform endRingtoDestroy;
-		endRingtoDestroy = _listOfRingsOfMovements [_MoveList.Count - 1];
-		_listOfRingsOfMovements.RemoveAt (_MoveList.Count - 1);
-		Destroy ((endRingtoDestroy as Transform).gameObject); 
+		endRingtoDestroy = _listOfRingsOfMovements [_listOfRingsOfMovements.Count - 1];
+		_listOfRingsOfMovements.RemoveAt (_listOfRingsOfMovements.Count - 1);
+		Destroy ((endRingtoDestroy as Transform).gameObject);
 
+		destroyVisuals();
+
+		reDrawLine(_lastPositionClicked);
 	}
 
+	public void reDrawLine(Vector3 actualPos)
+	{
+		
+		for(int i = 0 ; i< 9; i++)
+		{
+			_myLine.SetPosition(i,actualPos);
+		} 
+	
 
+		int j;
+		
+		for(int i = 0 ; i< 9; i++)
+		{
+
+			j = -1;
+			
+			if(i < _MoveList.Count)
+			{
+				j = i;
+			}
+
+			if( i == 0)
+			{
+				_myLine.SetPosition(0,_myPlayer.position);
+				if (j==-1)
+				{
+					_myLine.SetPosition(1,actualPos);
+				} else {
+					_myLine.SetPosition(1,_MoveList[j]);
+				}
+				
+			} else {
+				if (j==-1)
+				{
+					_myLine.SetPosition(i+1,actualPos);
+				} else {
+					_myLine.SetPosition(i+1,_MoveList[j]);
+				}
+			}
+			
+		}
+	}
+
+	public void destroyVisuals()
+	{
+		if(_endMovementRing)
+		{
+			Destroy((_endMovementRing as Transform).gameObject);
+		}
+		if (_mycircle) {
+			Destroy ((_mycircle as Transform).gameObject);
+		}
+		if(_mycone) {
+			Destroy ((_mycone as Transform).gameObject);
+		}
+	}
 }

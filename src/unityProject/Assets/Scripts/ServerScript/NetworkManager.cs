@@ -11,6 +11,8 @@ public class NetworkManager : MonoBehaviour
     private int _numberOfPlayer = 0;
     private string _mapName = "Map no1";
 
+	public delegate void resolvingSkill (Vector3 actualPos);
+	public static event resolvingSkill skillResolve;
     
     public bool init = false;
     public GameObject _myPlayer;
