@@ -13,6 +13,9 @@ public class OrdersList : MonoBehaviour {
 	Transform showingActualSkill;
 	LineRenderer _myLine;
 
+	/*[SerializeField]
+	Transform   MessageManager;*/
+
 
 	void OnEnable() {
 		CratePanelPrefab.skillAdd += addSkill;
@@ -29,30 +32,58 @@ public class OrdersList : MonoBehaviour {
 		
 		if(showingActualSkill)
 		{
+			Vector3 total = player.transform.position;
 			if(Directions.Count > 0)
 			{
-				Directions.Add((showingActualSkill.position - calculateDirectionsAndMagnitudes()).normalized);
-				Magnitudes.Add((showingActualSkill.position - calculateDirectionsAndMagnitudes()).magnitude);
-				Debug.Log("pouet2");
-				
-			} else {
-				Directions.Add((showingActualSkill.position - player.transform.position).normalized);
-				//Debug.Log(showingActualSkill.position - player.transform.position);
-				//Debug.Log ((showingActualSkill.position - player.transform.position).magnitude);
-				Magnitudes.Add((showingActualSkill.position - player.transform.position).magnitude); 
-				Debug.Log("pouet3");
+				total = calculateDirectionsAndMagnitudes();
 			}
-			SkillToLaunch.Add(thisSkill);
+			
+			Debug.Log(((thisSkill.getCastTime((showingActualSkill.position - total).magnitude)) + calculateAllTime()));
 
 			
-			Destroy((showingActualSkill as Transform).gameObject);
+
+			if(((thisSkill.getCastTime((showingActualSkill.position - total).magnitude)) + calculateAllTime()) < 10)
+			{
+				if(Directions.Count > 0)
+				{
+					
+					Directions.Add((showingActualSkill.position - total).normalized);
+					Magnitudes.Add((showingActualSkill.position - total).magnitude);
+					
+				} else {
+					Directions.Add((showingActualSkill.position - total).normalized);
+					Magnitudes.Add((showingActualSkill.position - total).magnitude); 
+					
+				}
+				SkillToLaunch.Add(thisSkill);
+				
+				
+				Destroy((showingActualSkill as Transform).gameObject);
+
+			} else {
+				//MessageManager.GetComponent<MessageManager>().CreateShortMessage(2, "Vous ne pouvez pas ajouter cette compétence a votre TimeLine");
+			}
+			
+			
 		}
 	}
+
+	private float calculateAllTime()
+	{
+		float total = 0;
+		for(int i = 0; i < SkillToLaunch.Count; i++)
+		{
+			total += SkillToLaunch[i].getCastTime(Magnitudes[i]);
+		}
+		return total;
+	} 
 
 	private Vector3 calculateDirectionsAndMagnitudes(){
 		Vector3 result = new Vector3();
 		for(int i = 0; i < Directions.Count; ++i)
 		{
+			/*Debug.Log(i + " taile " + Directions.Count + " " + Magnitudes.Count);
+			Debug.Log(Directions[i] + " " + Magnitudes[i]); */
 			result += (Directions[i] * Magnitudes[i]);
 		}
 
@@ -81,18 +112,18 @@ public class OrdersList : MonoBehaviour {
 
 		if(GUI.Button(new Rect(200, 500, 50, 50), "Launch !"))
 		{
-			launchAllSkills();
+			StartCoroutine(launchAllSkills());
 		}
 
 		if(GUI.Button(new Rect(200,550, 50,50), "Suppress !"))
 		{
-			SkillToLaunch.RemoveAt(SkillToLaunch.Count - 1);
+			SkillToLaunch.RemoveAt(SkillToLaunch.Count - 1); 
 			Directions.RemoveAt(Directions.Count - 1);
 			Magnitudes.RemoveAt(Magnitudes.Count - 1);
 		}
 	}
 
-	void launchAllSkills()
+	IEnumerator launchAllSkills()
 	{
 		SkillTest[] SkillsLaunched = new SkillTest[SkillToLaunch.Count];
 		SkillToLaunch.CopyTo(SkillsLaunched);
@@ -100,10 +131,11 @@ public class OrdersList : MonoBehaviour {
 		
 		for(int i = 0; i < SkillsLaunched.Length; ++i)
 		{
-			Debug.Log("lool" + i + " taile " + SkillsLaunched.Length + " " + Directions.Count + " " + Magnitudes.Count);
-			Debug.Log(Directions[i] + " " + Magnitudes[i]);
-			SkillsLaunched[i].skillResolve(player, Directions[i], Magnitudes[i]); 
-			//player.transform.Translate(new Vector3(0,10,10)); 
+			//Debug.Log("1");
+			StartCoroutine(SkillsLaunched[i].skillResolve(player, Directions[i], Magnitudes[i])); 
+			//yield return SkillsLaunched[i].getCastTime(Magnitudes[i]);
+			Debug.Log(string.Format(Time.deltaTime.ToString()));
+			yield return new WaitForSeconds(SkillsLaunched[i].getCastTime(Magnitudes[i]));
 		}
 
 		Directions.Clear();

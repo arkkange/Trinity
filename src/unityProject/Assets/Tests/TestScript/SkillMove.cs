@@ -11,15 +11,37 @@ public class SkillMove : SkillTest {
 		_name               = name;
 	}*/
 
-	public override void skillResolve (GameObject actualPos, Vector3 Direction, float magnitude)
+	public override IEnumerator skillResolve (GameObject actualPos, Vector3 Direction, float magnitude)
 	{
-		//GameObject _thisGo = actualPos;
-		actualPos.transform.Translate(magnitude * Direction);
-		Debug.Log ("Lil");
+
+		Vector3 startPos = actualPos.transform.position;
+		float time = getCastTime(magnitude);
+		
+		float i = 0;
+		while(i < time)
+		{
+			//Debug.Log(i + " time : " + time);
+			//v = Vector3.Lerp(startPos, Direction*magnitude, Time.fixedDeltaTime * _damageValue);
+			float factor = Time.deltaTime * _damageValue;
+			actualPos.transform.Translate(Direction.x*factor,actualPos.transform.position.y,Direction.z*factor);
+			i += Time.deltaTime; 
+			//actualPos.transform.position = v;
+			yield return null;
+		}
+		
+
+		
+
+		//actualPos.transform.position = v;
 	} 
 
 	public override void skillShow(Transform actualPos, Vector3 position)
 	{
+		
+	}
 
+	public override float getCastTime(float magnitude)
+	{
+		return magnitude / _damageValue;
 	}
 }

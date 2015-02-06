@@ -159,7 +159,7 @@ MonoBehaviour:
   _magnitude: 0
   _castTime: 0
   _powerValue: 0
-  _damageValue: 0
+  _damageValue: 5
   _isDamage: 0
   _healValue: 0
   _isResurection: 0

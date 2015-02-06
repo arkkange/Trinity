@@ -19,13 +19,18 @@ public class SkillAttack : SkillTest {
 		_name               = name;
 	}*/
 	
-	public override void skillResolve (GameObject actualPos, Vector3 Direction, float magnitude)
+	public override IEnumerator skillResolve (GameObject actualPos, Vector3 Direction, float magnitude)
 	{
-		
+		yield return null;
 	}
 
 	public override void skillShow(Transform actualPos, Vector3 position)
 	{
 		
 	}
+
+	public override float getCastTime(float magnitude)
+ { 
+		return 0;
+}
 }

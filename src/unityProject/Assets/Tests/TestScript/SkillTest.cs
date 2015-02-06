@@ -31,5 +31,7 @@ public abstract class SkillTest : MonoBehaviour {
 	}*/
 	public abstract void skillShow(Transform actualPos, Vector3 position);
 
-	public abstract void skillResolve(GameObject actualPos, Vector3 Direction, float magnitude);
+	public abstract IEnumerator skillResolve(GameObject actualPos, Vector3 Direction, float magnitude);
+
+	public abstract float getCastTime(float magnitude);
 }

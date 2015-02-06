@@ -22,17 +22,20 @@ public class CratePanelPrefab : MonoBehaviour {
 
 	void Update()
 	{
-		if(Input.GetMouseButton(0))
+		if(Input.GetMouseButton(1))
 		{
 			Plane playerPlane = new Plane(Vector3.up, _thisPlayer.transform.position);
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			float hitdist = 0.0f;
-			if (playerPlane.Raycast(ray, out hitdist))
+			RaycastHit hit; 
+			float hitdist = 10.0f;
+			if (Physics.Raycast(ray, out hit, 100))
 			{
-				Vector3 _lastPositionClicked = ray.GetPoint(hitdist);
-				Debug.Log(_lastPositionClicked.ToString());
+				Vector3 _lastPositionClicked = hit.point;
+					//ray.GetPoint(hitdist);
+				//Debug.Log(hit.point.ToString());
 				skillShow(chosenSkill, _lastPositionClicked);
 			}
+			//Debug.Log("Lol");
 		}
 	}
 
