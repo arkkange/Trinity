@@ -11,10 +11,14 @@ public class OrdersList : MonoBehaviour {
 	List<float> Magnitudes = new List<float>();
 
 	Transform showingActualSkill;
+
+	[SerializeField]
 	LineRenderer _myLine;
 
-	/*[SerializeField]
-	Transform   MessageManager;*/
+	void Start()
+	{ 
+		_myLine.SetVertexCount(0);
+	}
 
 
 	void OnEnable() {
@@ -29,7 +33,6 @@ public class OrdersList : MonoBehaviour {
 
 	void addSkill(SkillTest thisSkill)
 	{
-		
 		if(showingActualSkill)
 		{
 			Vector3 total = player.transform.position;
@@ -37,11 +40,7 @@ public class OrdersList : MonoBehaviour {
 			{
 				total = calculateDirectionsAndMagnitudes();
 			}
-			
-			Debug.Log(((thisSkill.getCastTime((showingActualSkill.position - total).magnitude)) + calculateAllTime()));
-
-			
-
+			//Debug.Log(((thisSkill.getCastTime((showingActualSkill.position - total).magnitude)) + calculateAllTime()));
 			if(((thisSkill.getCastTime((showingActualSkill.position - total).magnitude)) + calculateAllTime()) < 10)
 			{
 				if(Directions.Count > 0)
@@ -59,13 +58,56 @@ public class OrdersList : MonoBehaviour {
 				
 				
 				Destroy((showingActualSkill as Transform).gameObject);
+				showLines();
 
-			} else {
-				//MessageManager.GetComponent<MessageManager>().CreateShortMessage(2, "Vous ne pouvez pas ajouter cette compétence a votre TimeLine");
-			}
-			
-			
+			}			
 		}
+	}
+
+	private void showLines()
+	{ 
+		Vector3 total = player.transform.position;
+		_myLine.SetVertexCount(0);
+		//Debug.Log(SkillToLaunch.Count);
+		_myLine.SetVertexCount(SkillToLaunch.Count);
+		for(int i = 0; i < SkillToLaunch.Count;i++)
+		{
+			if(i == 0)
+			{
+				_myLine.SetPosition(i,total);
+			} else {
+				total = new Vector3(0,0,0);
+				for(int j = 0; j < i; j++)
+				{
+					total += (Directions[j] * Magnitudes[j]);
+				}
+				_myLine.SetPosition(i,total);
+			}
+		}
+
+	}
+
+	private void showLinesWithSkillShow()
+	{ 
+		Vector3 total = player.transform.position;
+		_myLine.SetVertexCount(0);
+		Debug.Log(SkillToLaunch.Count);
+		_myLine.SetVertexCount(SkillToLaunch.Count);
+		for(int i = 0; i < SkillToLaunch.Count;i++)
+		{
+			if(i == 0)
+			{
+				_myLine.SetPosition(i,total);
+			} else {
+				total = new Vector3(0,0,0);
+				for(int j = 0; j < i; j++)
+				{
+					total += (Directions[j] * Magnitudes[j]);
+				}
+				_myLine.SetPosition(i,total);
+			}
+		}
+		
 	}
 
 	private float calculateAllTime()
@@ -82,8 +124,6 @@ public class OrdersList : MonoBehaviour {
 		Vector3 result = new Vector3();
 		for(int i = 0; i < Directions.Count; ++i)
 		{
-			/*Debug.Log(i + " taile " + Directions.Count + " " + Magnitudes.Count);
-			Debug.Log(Directions[i] + " " + Magnitudes[i]); */
 			result += (Directions[i] * Magnitudes[i]);
 		}
 
@@ -96,10 +136,8 @@ public class OrdersList : MonoBehaviour {
 		{
 			Destroy((showingActualSkill as Transform).gameObject);
 		}
-		//Destroy((_myLine as LineRenderer).gameObject);
-		showingActualSkill = Instantiate(thisSkill._prefabsTransform, position_clicked, Quaternion.identity) as Transform;
-		showingActualSkill.Rotate(new Vector3(90,0,0));
-		showingActualSkill.localScale.Scale(new Vector3(3,3,3));
+		showingActualSkill = thisSkill.skillShow(position_clicked);
+		showLines();
 	}
 
 	// Update is called once per frame
@@ -131,10 +169,7 @@ public class OrdersList : MonoBehaviour {
 		
 		for(int i = 0; i < SkillsLaunched.Length; ++i)
 		{
-			//Debug.Log("1");
 			StartCoroutine(SkillsLaunched[i].skillResolve(player, Directions[i], Magnitudes[i])); 
-			//yield return SkillsLaunched[i].getCastTime(Magnitudes[i]);
-			Debug.Log(string.Format(Time.deltaTime.ToString()));
 			yield return new WaitForSeconds(SkillsLaunched[i].getCastTime(Magnitudes[i]));
 		}
 

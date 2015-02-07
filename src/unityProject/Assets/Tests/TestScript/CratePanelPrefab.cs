@@ -31,11 +31,10 @@ public class CratePanelPrefab : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit, 100))
 			{
 				Vector3 _lastPositionClicked = hit.point;
-					//ray.GetPoint(hitdist);
-				//Debug.Log(hit.point.ToString());
+
 				skillShow(chosenSkill, _lastPositionClicked);
 			}
-			//Debug.Log("Lol");
+
 		}
 	}
 
@@ -67,6 +66,7 @@ public class CratePanelPrefab : MonoBehaviour {
 		{
 			if(GUI.Button(new Rect(5, i * 50, 150, 40), skills.playerSkillSet[i].name))
 			{
+				//To do : Prndre le rectangle correspondant au skill;
 				//skills.playerSkillSet[i].skillResolve(_thisPlayer.transform.position);
 				chosenSkill = skills.playerSkillSet[i];
 			}
