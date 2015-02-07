@@ -5,10 +5,15 @@ using System.Collections.Generic;
 public class OrdersList : MonoBehaviour {
 
 	public GameObject player;
+	public int chosenPlayerIndex;
+
+	public List<GameObject> allPlayersOrderList;
 
 	List<SkillTest> SkillToLaunch = new List<SkillTest>();
 	List<Vector3> Directions = new List<Vector3>();
 	List<float> Magnitudes = new List<float>();
+
+	List<List<Object>> FUCKYOUPROJECT = new List<List<Object>>();
 
 	Transform showingActualSkill;
 
@@ -18,6 +23,11 @@ public class OrdersList : MonoBehaviour {
 	void Start()
 	{ 
 		_myLine.SetVertexCount(0);
+
+		for(int i = 0; i< allPlayersOrderList.Count;i++)
+		{
+			FUCKYOUPROJECT.Add(new List<Object>());
+		}
 	}
 
 
@@ -58,7 +68,7 @@ public class OrdersList : MonoBehaviour {
 				
 				
 				Destroy((showingActualSkill as Transform).gameObject);
-				showLines();
+				//showLines();
 
 			}			
 		}
@@ -137,7 +147,7 @@ public class OrdersList : MonoBehaviour {
 			Destroy((showingActualSkill as Transform).gameObject);
 		}
 		showingActualSkill = thisSkill.skillShow(position_clicked);
-		showLines();
+		//showLines();
 	}
 
 	// Update is called once per frame
@@ -150,7 +160,7 @@ public class OrdersList : MonoBehaviour {
 
 		if(GUI.Button(new Rect(200, 500, 50, 50), "Launch !"))
 		{
-			StartCoroutine(launchAllSkills());
+			networkView.RPC("askForData",RPCMode.Server);
 		}
 
 		if(GUI.Button(new Rect(200,550, 50,50), "Suppress !"))
@@ -161,20 +171,32 @@ public class OrdersList : MonoBehaviour {
 		}
 	}
 
+	[RPC]
+	void askForData(){
+		//StartCoroutine(launchAllSkills());
+		
+	}
+
+	[RPC]
+	void clientSendData(){
+		
+	}
+		
+
 	IEnumerator launchAllSkills()
 	{
-		SkillTest[] SkillsLaunched = new SkillTest[SkillToLaunch.Count];
-		SkillToLaunch.CopyTo(SkillsLaunched);
-		SkillToLaunch.Clear();
-		
-		for(int i = 0; i < SkillsLaunched.Length; ++i)
-		{
-			StartCoroutine(SkillsLaunched[i].skillResolve(player, Directions[i], Magnitudes[i])); 
-			yield return new WaitForSeconds(SkillsLaunched[i].getCastTime(Magnitudes[i]));
-		}
-
-		Directions.Clear();
-		Magnitudes.Clear ();
+			SkillTest[] SkillsLaunched = new SkillTest[SkillToLaunch.Count];
+			SkillToLaunch.CopyTo(SkillsLaunched);
+			SkillToLaunch.Clear();
+			
+			for(int i = 0; i < SkillsLaunched.Length; ++i)
+			{
+				StartCoroutine(SkillsLaunched[i].skillResolve(player, Directions[i], Magnitudes[i])); 
+				yield return new WaitForSeconds(SkillsLaunched[i].getCastTime(Magnitudes[i]));
+			}
+			
+			Directions.Clear();
+			Magnitudes.Clear ();	
 	}
 
 	

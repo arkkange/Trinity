@@ -4,8 +4,10 @@ using System.Collections.Generic;
 
 public class CratePanelPrefab : MonoBehaviour {
 
-	[SerializeField]
-	GameObject PlayerPrefab;
+	public List<GameObject> AllPlayers = new List<GameObject>();
+	public GameObject PlayerPrefab;
+
+	List<GameObject> AllPlayersInitiated = new List<GameObject>();
 	GameObject _thisPlayer;
 
 	[SerializeField]
@@ -39,9 +41,18 @@ public class CratePanelPrefab : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
-		_thisPlayer = Instantiate(PlayerPrefab, new Vector3(0,0,0), Quaternion.identity) as GameObject;
-		
+	public void initialize (int index) {
+
+		if(PlayerPrefab)
+		{
+			for(int i = 0; i < AllPlayers.Count;i++)
+			{
+				AllPlayersInitiated.Add(Instantiate(AllPlayers[i], new Vector3(0,0,0), Quaternion.identity) as GameObject);
+				if(index == i) {
+					_thisPlayer = AllPlayers[i];
+				}
+			}
+		}
 		
 
 		scriptSkillSet skills = _thisPlayer.GetComponent<scriptSkillSet>();
@@ -56,6 +67,12 @@ public class CratePanelPrefab : MonoBehaviour {
 		OrdersList orders = timeLine.GetComponent<OrdersList>();
 
 		orders.player = _thisPlayer;
+		orders.chosenPlayerIndex = index;
+
+		for(int i = 0; i < AllPlayers.Count;i++)
+		{
+			orders.allPlayersOrderList.Add(AllPlayersInitiated[i]);
+		}
 	}
 	
 	void OnGUI(){

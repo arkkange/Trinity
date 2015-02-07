@@ -6,6 +6,7 @@ public class scriptSkillSet : MonoBehaviour {
 	
 	[SerializeField]
 	public List<SkillTest> playerSkillSet = new List<SkillTest>();
-	
-	
+
+	[SerializeField]
+	public string _name;
 }
