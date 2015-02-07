@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 437424}
   - 114: {fileID: 11437424}
+  - 148: {fileID: 14890374}
   m_Layer: 0
   m_Name: OrderList
   m_TagString: Untagged
@@ -69,6 +70,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  chosenPlayerIndex: 0
+  allPlayersOrderList: []
   _myLine: {fileID: 12094756}
 --- !u!120 &12094756
 LineRenderer:
@@ -101,6 +104,18 @@ LineRenderer:
       serializedVersion: 2
       rgba: 4280624561
   m_UseWorldSpace: 1
+--- !u!148 &14890374
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137424}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 437424}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

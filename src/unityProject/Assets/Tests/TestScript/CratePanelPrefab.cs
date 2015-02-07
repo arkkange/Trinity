@@ -49,7 +49,7 @@ public class CratePanelPrefab : MonoBehaviour {
 			{
 				AllPlayersInitiated.Add(Instantiate(AllPlayers[i], new Vector3(0,0,0), Quaternion.identity) as GameObject);
 				if(index == i) {
-					_thisPlayer = AllPlayers[i];
+					_thisPlayer = AllPlayersInitiated[i];
 				}
 			}
 		}

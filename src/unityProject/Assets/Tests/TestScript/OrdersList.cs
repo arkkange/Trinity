@@ -13,7 +13,7 @@ public class OrdersList : MonoBehaviour {
 	List<Vector3> Directions = new List<Vector3>();
 	List<float> Magnitudes = new List<float>();
 
-	List<List<Object>> FUCKYOUPROJECT = new List<List<Object>>();
+	//List<List<Object>> FUCKYOUPROJECT = new List<List<Object>>();
 
 	Transform showingActualSkill;
 
@@ -24,10 +24,10 @@ public class OrdersList : MonoBehaviour {
 	{ 
 		_myLine.SetVertexCount(0);
 
-		for(int i = 0; i< allPlayersOrderList.Count;i++)
+		/*for(int i = 0; i< allPlayersOrderList.Count;i++)
 		{
 			FUCKYOUPROJECT.Add(new List<Object>());
-		}
+		}*/
 	}
 
 
@@ -43,19 +43,27 @@ public class OrdersList : MonoBehaviour {
 
 	void addSkill(SkillTest thisSkill)
 	{
+Debug.Log ("Lool");
+
 		if(showingActualSkill)
 		{
+			Debug.Log ("Lool");
 			Vector3 total = player.transform.position;
+			Debug.Log(total.ToString());
 			if(Directions.Count > 0)
 			{
 				total = calculateDirectionsAndMagnitudes();
 			}
 			//Debug.Log(((thisSkill.getCastTime((showingActualSkill.position - total).magnitude)) + calculateAllTime()));
+			Debug.Log (((thisSkill.getCastTime((showingActualSkill.position - total).magnitude)) + calculateAllTime()));
+			Debug.Log(calculateAllTime().ToString());
+			Debug.Log(total.ToString());
+			Debug.Log(showingActualSkill.position.ToString());
+
 			if(((thisSkill.getCastTime((showingActualSkill.position - total).magnitude)) + calculateAllTime()) < 10)
 			{
 				if(Directions.Count > 0)
 				{
-					
 					Directions.Add((showingActualSkill.position - total).normalized);
 					Magnitudes.Add((showingActualSkill.position - total).magnitude);
 					
@@ -65,7 +73,7 @@ public class OrdersList : MonoBehaviour {
 					
 				}
 				SkillToLaunch.Add(thisSkill);
-				
+				Debug.Log("POUET");
 				
 				Destroy((showingActualSkill as Transform).gameObject);
 				//showLines();
@@ -155,15 +163,16 @@ public class OrdersList : MonoBehaviour {
 
 		for(int i = 0; i < SkillToLaunch.Count ; ++i)
 		{
+			Debug.Log(SkillToLaunch[i].name);
 			GUI.Button(new Rect(100 + (i *50), 400, 50, 40), SkillToLaunch[i].name);
 		}
 
-		if(GUI.Button(new Rect(200, 500, 50, 50), "Launch !"))
+		if(GUI.Button(new Rect(200, 500, 100, 50), "Launch !"))
 		{
-			networkView.RPC("askForData",RPCMode.Server);
+			networkView.RPC("askForData",RPCMode.All);
 		}
 
-		if(GUI.Button(new Rect(200,550, 50,50), "Suppress !"))
+		if(GUI.Button(new Rect(200,550, 100,50), "Suppress !"))
 		{
 			SkillToLaunch.RemoveAt(SkillToLaunch.Count - 1); 
 			Directions.RemoveAt(Directions.Count - 1);
@@ -173,13 +182,7 @@ public class OrdersList : MonoBehaviour {
 
 	[RPC]
 	void askForData(){
-		//StartCoroutine(launchAllSkills());
-		
-	}
-
-	[RPC]
-	void clientSendData(){
-		
+		StartCoroutine(launchAllSkills());
 	}
 		
 
