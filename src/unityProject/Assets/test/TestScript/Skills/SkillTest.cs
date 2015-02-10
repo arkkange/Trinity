@@ -9,7 +9,9 @@ public abstract class SkillTest : MonoBehaviour {
     [SerializeField]
     Sprite _mySprite;
 
-	public float            _castTime;
+    public Color _ColorTimeLineSkill1;
+
+	public float            _castTime;      //changer en int ?
 	public int              _powerValue;
 	public float            _damageValue;
 	public string           _name;

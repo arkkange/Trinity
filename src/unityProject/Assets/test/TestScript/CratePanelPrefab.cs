@@ -16,6 +16,7 @@ public class CratePanelPrefab : MonoBehaviour {
 
 	SkillTest chosenSkill;
 
+
 	public delegate void SkillAddingHandler(SkillTest thisSkill);
 	public static event SkillAddingHandler skillAdd;
 

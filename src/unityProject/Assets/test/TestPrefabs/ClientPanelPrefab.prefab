@@ -51,8 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ecc5bbec80411645a620ed2a2659422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllPlayers: []
   PlayerPrefab: {fileID: 0}
-  TimeLinePrefab: {fileID: 137424, guid: 18adc13aa6af8ac4890521fd7e971a8a, type: 2}
+  TimeLinePrefab: {fileID: 194274, guid: e7e7c73e53bf6324d975926f70e88661, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

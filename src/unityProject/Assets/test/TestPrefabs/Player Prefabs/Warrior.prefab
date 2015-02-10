@@ -96,7 +96,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129500}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefabsTransform: {fileID: 431694, guid: d29c54214bd2568448bb9728cf694196, type: 2}
   _mySprite: {fileID: 0}
+  _ColorTimeLineSkill1: {r: 0, g: 0, b: 0, a: 0}
   _castTime: 0
   _powerValue: 0
   _damageValue: 5
@@ -174,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefabsTransform: {fileID: 0}
   _mySprite: {fileID: 0}
+  _ColorTimeLineSkill1: {r: 0, g: 0, b: 0, a: 0}
   _castTime: 2
   _powerValue: 0
   _damageValue: 100

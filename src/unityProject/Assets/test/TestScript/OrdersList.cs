@@ -13,6 +13,9 @@ public class OrdersList : MonoBehaviour {
 	List<Vector3> Directions = new List<Vector3>();
 	List<float> Magnitudes = new List<float>();
 
+    [SerializeField]
+    TimeLineManager _myTimeLineManager; // visuel de la time line
+
 	//List<List<Object>> FUCKYOUPROJECT = new List<List<Object>>();
 
 	Transform showingActualSkill;
@@ -43,40 +46,30 @@ public class OrdersList : MonoBehaviour {
 
 	void addSkill(SkillTest thisSkill)
 	{
-Debug.Log ("Lool");
+
 
 		if(showingActualSkill)
 		{
-			Debug.Log ("Lool");
+
 			Vector3 total = player.transform.position;
-			Debug.Log(total.ToString());
+
 			if(Directions.Count > 0)
 			{
 				total = calculateDirectionsAndMagnitudes();
 			}
-			//Debug.Log(((thisSkill.getCastTime((showingActualSkill.position - total).magnitude)) + calculateAllTime()));
-			Debug.Log (((thisSkill.getCastTime((showingActualSkill.position - total).magnitude)) + calculateAllTime()));
-			Debug.Log(calculateAllTime().ToString());
-			Debug.Log(total.ToString());
-			Debug.Log(showingActualSkill.position.ToString());
 
 			if(((thisSkill.getCastTime((showingActualSkill.position - total).magnitude)) + calculateAllTime()) < 10)
 			{
-				if(Directions.Count > 0)
-				{
-					Directions.Add((showingActualSkill.position - total).normalized);
-					Magnitudes.Add((showingActualSkill.position - total).magnitude);
-					
-				} else {
-					Directions.Add((showingActualSkill.position - total).normalized);
-					Magnitudes.Add((showingActualSkill.position - total).magnitude); 
-					
-				}
+
+				Directions.Add((showingActualSkill.position - total).normalized);
+				Magnitudes.Add((showingActualSkill.position - total).magnitude); 
+				
 				SkillToLaunch.Add(thisSkill);
-				Debug.Log("POUET");
 				
 				Destroy((showingActualSkill as Transform).gameObject);
 				//showLines();
+
+                // c'est ici qu'on ajoute un nouveau skill en visuel dans la time line
 
 			}			
 		}
@@ -148,7 +141,7 @@ Debug.Log ("Lool");
 		return result;
 	}
 
-	void skillShows(SkillTest thisSkill, Vector3 position_clicked)
+	void skillShows(SkillTest thisSkill, Vector3 position_clicked)  
 	{
 		if(showingActualSkill)
 		{
@@ -156,6 +149,9 @@ Debug.Log ("Lool");
 		}
 		showingActualSkill = thisSkill.skillShow(position_clicked);
 		//showLines();
+
+        // c'est ici qu'on lance le visuel sur la time line
+
 	}
 
 	// Update is called once per frame
@@ -163,7 +159,6 @@ Debug.Log ("Lool");
 
 		for(int i = 0; i < SkillToLaunch.Count ; ++i)
 		{
-			Debug.Log(SkillToLaunch[i].name);
 			GUI.Button(new Rect(100 + (i *50), 400, 50, 40), SkillToLaunch[i].name);
 		}
 
@@ -172,13 +167,21 @@ Debug.Log ("Lool");
 			networkView.RPC("askForData",RPCMode.All);
 		}
 
-		if(GUI.Button(new Rect(200,550, 100,50), "Suppress !"))
+		if(GUI.Button(new Rect(200,550, 100,50), "Suppress !")) //eveneent de suppression du dernier skill ajouté   todo : a ajouter dans le timeline manager
 		{
 			SkillToLaunch.RemoveAt(SkillToLaunch.Count - 1); 
 			Directions.RemoveAt(Directions.Count - 1);
 			Magnitudes.RemoveAt(Magnitudes.Count - 1);
 		}
 	}
+
+    //remplacement de la gui au dessus
+    public void DeleteLastSkillEvent()
+    {
+        SkillToLaunch.RemoveAt(SkillToLaunch.Count - 1);
+        Directions.RemoveAt(Directions.Count - 1);
+        Magnitudes.RemoveAt(Magnitudes.Count - 1);
+    }
 
 	[RPC]
 	void askForData(){

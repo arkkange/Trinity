@@ -41,6 +41,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefabsTransform: {fileID: 0}
   _mySprite: {fileID: 21300000, guid: 76ff7f72a88fabf40b73f963258185b5, type: 3}
+  _ColorTimeLineSkill1: {r: 1, g: 0, b: 0, a: 1}
   _castTime: 2
   _powerValue: 0
   _damageValue: 100
