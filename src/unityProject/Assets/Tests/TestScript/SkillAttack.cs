@@ -14,7 +14,7 @@ public class SkillAttack : SkillTest {
 	}
 
 	public override float getCastTime(float magnitude)
- { 
+	{ 
 		return 0;
-}
+	}
 }
