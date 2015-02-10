@@ -1,0 +1,569 @@
+Initialize engine version: 4.6.1p5 (ea3e5beea19a)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 770M (ID=0x11e0)
+    Vendor:   NVIDIA
+    VRAM:     2976 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\Unity Projects\Trinity\Trinity\bin\Build Windows\Trinity_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\Unity Projects\Trinity\Trinity\bin\Build Windows\Trinity_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\Unity Projects\Trinity\Trinity\bin\Build Windows\Trinity_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\Unity Projects\Trinity\Trinity\bin\Build Windows\Trinity_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\Unity Projects\Trinity\Trinity\bin\Build Windows\Trinity_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\Unity Projects\Trinity\Trinity\bin\Build Windows\Trinity_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.064 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: E:\Unity Projects\Trinity\Trinity\bin\Build Windows\Trinity_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\Unity Projects\Trinity\Trinity\bin\Build Windows\Trinity_Data\Managed\System.dll (this message is harmless)
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+ArgumentException: The prefab you want to instantiate is null.
+  at UnityEngine.Object.CheckNullArgument (System.Object arg, System.String message) [0x00000] in <filename unknown>:0 
+  at UnityEngine.Object.Instantiate (UnityEngine.Object original, Vector3 position, Quaternion rotation) [0x00000] in <filename unknown>:0 
+  at SkillAttack.skillShow (Vector3 position) [0x00000] in <filename unknown>:0 
+  at OrdersList.skillShows (.SkillTest thisSkill, Vector3 position_clicked) [0x00000] in <filename unknown>:0 
+  at CratePanelPrefab.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
