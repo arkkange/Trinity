@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class MenuScript : MonoBehaviour {
 
 	[SerializeField]
-	List<GameObject> playerPrefabs = new List<GameObject>();
-	List<bool> IsthisSkillchosen = new List<bool>();
+	public List<GameObject> playerPrefabs = new List<GameObject>();
+	public List<bool> IsthisSkillchosen = new List<bool>();
 
 	[SerializeField]
 	GameObject _thisPanelGameObject;
@@ -16,12 +16,16 @@ public class MenuScript : MonoBehaviour {
 	int indexChosen = -1;
 
 	bool GameStarted = false;
+	bool isClient = false;
 
 	public string IP = "127.0.0.1";
 	public int Port = 25001;
 
 	void Start()
 	{
+		MasterServer.ipAddress = IP;
+		MasterServer.port = Port;
+
 		for(int i = 0; i < playerPrefabs.Count; i++)
 		{
 			playerPrefabs[i].renderer.enabled = false;
@@ -44,16 +48,28 @@ public class MenuScript : MonoBehaviour {
 			} else {
 				if(Network.peerType == NetworkPeerType.Disconnected)
 				{
+					if (isClient)
+					{
+						if(GUI.Button(new Rect(100,100,100,25),"Refresh"))
+						{
+						MasterServer.RequestHostList("trinity");
+
+						HostData[] hosts = MasterServer.PollHostList();
+						}
+					} else {
 					if(GUI.Button(new Rect(100,100,100,25),"Start Client"))
 					{
-						Network.Connect(IP, Port);
-					   
+						isClient = true;
 					}
-
+					
 					if(GUI.Button(new Rect(100,125,100,25),"Start Server"))
 					{
-						Network.InitializeServer(10,Port);
+						//Network.InitializeServer(10,Port);
+						Network.InitializeServer(3,Port,true);
+						MasterServer.RegisterHost("trinity","MyGame", "gnagnagna");
 					}
+				}
+					
 
 				} else {
 					if(Network.peerType == NetworkPeerType.Client)
