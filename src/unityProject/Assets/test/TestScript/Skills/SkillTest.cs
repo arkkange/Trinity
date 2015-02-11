@@ -7,7 +7,7 @@ public abstract class SkillTest : MonoBehaviour {
 	public Transform _prefabsTransform;
 
     [SerializeField]
-    Sprite _mySprite;
+    public Sprite _mySprite;
 
     public Color _ColorTimeLineSkill1;
 

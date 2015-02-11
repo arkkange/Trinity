@@ -130,6 +130,16 @@ MonoBehaviour:
   PlayerPrefab: {fileID: 0}
   _thisPlayer: {fileID: 0}
   TimeLinePrefab: {fileID: 137424, guid: 18adc13aa6af8ac4890521fd7e971a8a, type: 2}
+  ActiveButton: 0
+  listButton:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  myValidateButton: {fileID: 0}
+  ButtonNormalColor: {r: 0, g: 0, b: 0, a: 0}
+  ButtonSelectedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &11404826
 MonoBehaviour:
   m_ObjectHideFlags: 1

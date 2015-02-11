@@ -142,6 +142,7 @@ public class MenuScript : MonoBehaviour {
 		panel.PlayerPrefab = chosenObject;
 		if(Network.peerType == NetworkPeerType.Server)
 		{
+Debug.Log("dsdsd");
 			panel._thisPlayer = (GameObject)Network.Instantiate(panel.PlayerPrefab, new Vector3(0,0,0), Quaternion.identity,0);
 		} else {
 			panel._thisPlayer = (GameObject)Network.Instantiate(panel.PlayerPrefab, new Vector3(0,0,0), Quaternion.identity,1);

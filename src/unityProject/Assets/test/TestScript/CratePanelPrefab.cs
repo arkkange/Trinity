@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class CratePanelPrefab : MonoBehaviour {
 
@@ -48,7 +49,7 @@ public class CratePanelPrefab : MonoBehaviour {
 		
 		for(int i = 0; i < skills.playerSkillSet.Count; ++i)
 		{
-			GUI.Button(new Rect(5, i * 50, 150, 40), skills.playerSkillSet[i].name);
+			changeSkillImage(i, skills.playerSkillSet[i]._mySprite);
 		}
 
 		timeLine = Instantiate(TimeLinePrefab, new Vector3(0,0,0), Quaternion.identity) as GameObject;
@@ -64,9 +65,9 @@ public class CratePanelPrefab : MonoBehaviour {
 		}*/
 	}
 	
-	void OnGUI(){
+	/*void OnGUI(){
 
-		scriptSkillSet skills = _thisPlayer.GetComponent<scriptSkillSet>();
+		
 
 		for(int i = 0; i < skills.playerSkillSet.Count; ++i)
 		{
@@ -81,8 +82,77 @@ public class CratePanelPrefab : MonoBehaviour {
 		if(GUI.Button(new Rect(5, 500, 100,50), "validate skill")){
 			if(chosenSkill != null)
 			{
-				skillAdd(chosenSkill);
+				
 			}
+		}
+	}*/
+
+	public int ActiveButton = 0;
+	
+	[SerializeField]
+	List<Image> listButton = new List<Image>();
+	
+	
+	[SerializeField]
+	GameObject myValidateButton;
+	
+	//Colors
+	[SerializeField]
+	Color ButtonNormalColor;
+	[SerializeField]
+	Color ButtonSelectedColor;
+	
+	
+	//test des fonctions ci après
+	void Start()
+	{
+		
+	}
+	
+	
+	//Evenements des boutons
+	public void OnclickButton(int number)
+	{
+		scriptSkillSet skills = _thisPlayer.GetComponent<scriptSkillSet>();
+		
+		chosenSkill = skills.playerSkillSet[number-1];
+		
+		//set the actual button number
+		ActiveButton = number;
+		
+		//validate button on
+		myValidateButton.SetActive(true);
+		
+		//colors changes
+		resetAllButtonColors();
+		SetButtonHighlightedColor(number);
+	}
+	
+	public void changeSkillImage(int number, Sprite newSprite){
+		listButton[number].sprite = newSprite;
+	}
+	
+	//evenement de validation du skill
+	public void Validate()
+	{
+		skillAdd(chosenSkill);
+		resetAllButtonColors();
+		//ActiveButton = 0;
+		//myValidateButton.SetActive(false);
+	}
+	
+	
+	//color gestion for buttons
+	void SetButtonHighlightedColor(int number){
+		//listButton[number].color = ButtonSelectedColor;
+	}
+	
+	void resetAllButtonColors() {
+		scriptSkillSet skills = _thisPlayer.GetComponent<scriptSkillSet>();
+		for(int i = 0; i < skills.playerSkillSet.Count; ++i)
+		{
+			//listButton[i].color = ButtonNormalColor;
+			changeSkillImage(i,skills.playerSkillSet[i]._mySprite);
 		}
 	}
 }

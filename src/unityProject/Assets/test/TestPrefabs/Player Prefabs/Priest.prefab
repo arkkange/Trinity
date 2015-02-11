@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefabsTransform: {fileID: 400236, guid: 92ef8a56224d2744082d03e6dd58a000, type: 2}
-  _mySprite: {fileID: 0}
+  _mySprite: {fileID: 21300000, guid: 76ff7f72a88fabf40b73f963258185b5, type: 3}
   _ColorTimeLineSkill1: {r: 0, g: 0, b: 0, a: 0}
   _castTime: 2
   _powerValue: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefabsTransform: {fileID: 431694, guid: d29c54214bd2568448bb9728cf694196, type: 2}
-  _mySprite: {fileID: 0}
+  _mySprite: {fileID: 21300000, guid: 0bb5298d2dcd51043874effab5c4d260, type: 3}
   _ColorTimeLineSkill1: {r: 0, g: 0, b: 0, a: 0}
   _castTime: 0
   _powerValue: 0
@@ -177,8 +177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSkillSet:
-  - {fileID: 11428814, guid: f25ecfbbf4fbd3845b1eae9bc08324ae, type: 2}
-  - {fileID: 11427792, guid: 656886b618e4abc4c9a47e1085ea51db, type: 2}
+  - {fileID: 11419226}
+  - {fileID: 11419224}
   _name: Priest
   MaxHealth: 100
   ActualHealth: 100

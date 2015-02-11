@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ActionBarManager : MonoBehaviour {
 
-    public int ActiveButton = 0;
+   /* public int ActiveButton = 0;
 
     //ImageSprites
     [SerializeField]
@@ -162,6 +162,6 @@ public class ActionBarManager : MonoBehaviour {
         Button3Image.color = ButtonNormalColor;
         Button4Image.color = ButtonNormalColor;
         Button5Image.color = ButtonNormalColor;
-    }
+    }*/
 }
 ;
