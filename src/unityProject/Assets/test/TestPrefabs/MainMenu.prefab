@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400396}
   - 114: {fileID: 11400396}
+  - 148: {fileID: 14828000}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -23,7 +24,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .588945389, y: -.940662384, z: .152704239}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39,8 +40,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1018e2169f5763c40b183b82974a193a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefabs: {fileID: 129500, guid: 70762498acd61f145af575da2caec3a3, type: 2}
-  _thisPanelGameObject: {fileID: 122956, guid: 7bcc73c9799cafb459009ce73feee607, type: 2}
+  playerPrefabs:
+  - {fileID: 129500, guid: 70762498acd61f145af575da2caec3a3, type: 2}
+  - {fileID: 119228, guid: 9ceae4ba69d25b14497aadff054414b3, type: 2}
+  IsthisSkillchosen: 
+  _thisPanelGameObject: {fileID: 104824, guid: 7bcc73c9799cafb459009ce73feee607, type: 2}
+  IP: 127.0.0.1
+  Port: 25001
+--- !u!148 &14828000
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100396}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 400396}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

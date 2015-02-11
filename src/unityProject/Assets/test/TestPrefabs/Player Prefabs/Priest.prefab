@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.25, y: -5.11000013, z: 171.100006}
+  m_LocalPosition: {x: 6.73988676, y: 0, z: 11.0873146}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 419226}
@@ -96,7 +96,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119228}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef91cbcf327c7c64586a92d7a4e2fa03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabsTransform: {fileID: 0}
+  _prefabsTransform: {fileID: 400236, guid: 92ef8a56224d2744082d03e6dd58a000, type: 2}
   _mySprite: {fileID: 0}
   _ColorTimeLineSkill1: {r: 0, g: 0, b: 0, a: 0}
   _castTime: 2
@@ -180,6 +180,8 @@ MonoBehaviour:
   - {fileID: 11428814, guid: f25ecfbbf4fbd3845b1eae9bc08324ae, type: 2}
   - {fileID: 11427792, guid: 656886b618e4abc4c9a47e1085ea51db, type: 2}
   _name: Priest
+  MaxHealth: 100
+  ActualHealth: 100
 --- !u!148 &14825622
 NetworkView:
   m_ObjectHideFlags: 1

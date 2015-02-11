@@ -24,11 +24,13 @@ public class MenuScript : MonoBehaviour {
 	void Start()
 	{
 		MasterServer.ipAddress = IP;
-		MasterServer.port = Port;
+		MasterServer.port = 23466;
+		Network.natFacilitatorIP = IP;
+		Network.natFacilitatorPort = Port;
 
 		for(int i = 0; i < playerPrefabs.Count; i++)
 		{
-			playerPrefabs[i].renderer.enabled = false;
+			//playerPrefabs[i].renderer.enabled = false;
 		}
 
 		for(int i = 0; i < playerPrefabs.Count; i++)
@@ -52,21 +54,29 @@ public class MenuScript : MonoBehaviour {
 					{
 						if(GUI.Button(new Rect(100,100,100,25),"Refresh"))
 						{
-						MasterServer.RequestHostList("trinity");
+							MasterServer.RequestHostList("aaa");
+						}
+					HostData[] hosts = MasterServer.PollHostList();
 
-						HostData[] hosts = MasterServer.PollHostList();
+						for(int i = 0; i < hosts.Length; ++i) 
+						{
+							if(GUI.Button(new Rect(100, 150-(i*100),150,50), hosts[i].gameName))
+							{
+								Network.Connect(hosts[i]);
+							}
 						}
 					} else {
 					if(GUI.Button(new Rect(100,100,100,25),"Start Client"))
 					{
 						isClient = true;
+						
 					}
 					
 					if(GUI.Button(new Rect(100,125,100,25),"Start Server"))
 					{
 						//Network.InitializeServer(10,Port);
 						Network.InitializeServer(3,Port,true);
-						MasterServer.RegisterHost("trinity","MyGame", "gnagnagna");
+						MasterServer.RegisterHost("aaa","MyGame", "gnagnagna");
 					}
 				}
 					
@@ -106,13 +116,13 @@ public class MenuScript : MonoBehaviour {
 		
 		bool canLaunch = true;
 
-		for(int i = 0; i < IsthisSkillchosen.Count ; i++)
+		/*for(int i = 0; i < IsthisSkillchosen.Count ; i++)
 		{
 			if(IsthisSkillchosen[i] == false)
 			{
 				canLaunch = false;
 			}
-		}
+		}*/
 		if(canLaunch) {
 			if(GUI.Button(new Rect(225,125,100,25), "Lancer Partie"))
 			{
@@ -128,17 +138,19 @@ public class MenuScript : MonoBehaviour {
 
 		_thisPanelGameObject = Instantiate(_thisPanelGameObject, new Vector3(0,0,0), Quaternion.identity) as GameObject;
 		CratePanelPrefab panel = _thisPanelGameObject.GetComponent<CratePanelPrefab>();
+		
 		panel.PlayerPrefab = chosenObject;
-
-		for(int i = 0; i < playerPrefabs.Count; i++)
+		if(Network.peerType == NetworkPeerType.Server)
 		{
-			playerPrefabs[i].renderer.enabled = true;
-			panel.AllPlayers.Add(playerPrefabs[i]);
+			panel._thisPlayer = (GameObject)Network.Instantiate(panel.PlayerPrefab, new Vector3(0,0,0), Quaternion.identity,0);
+		} else {
+			panel._thisPlayer = (GameObject)Network.Instantiate(panel.PlayerPrefab, new Vector3(0,0,0), Quaternion.identity,1);
 		}
+		
 
 		panel.initialize(indexChosen);
-
 		GameStarted = true;
+		
 	}
 
 	void drawChosenPlayer(){

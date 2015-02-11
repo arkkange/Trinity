@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 431694}
   - 23: {fileID: 2300282}
   - 33: {fileID: 3346068}
+  - 148: {fileID: 14880124}
   m_Layer: 0
   m_Name: movePrefab
   m_TagString: Untagged
@@ -56,6 +57,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131694}
   m_Mesh: {fileID: 4300000, guid: 4a3a1e6ba743a564f9db44df58c1268e, type: 3}
+--- !u!148 &14880124
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131694}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 431694}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
