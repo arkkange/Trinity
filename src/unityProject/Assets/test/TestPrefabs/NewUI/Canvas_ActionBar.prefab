@@ -509,6 +509,7 @@ MonoBehaviour:
   listButton:
   - {fileID: 11443604}
   - {fileID: 11443606}
+  - {fileID: 11443606}
   myValidateButton: {fileID: 143642}
   ButtonNormalColor: {r: .835294127, g: .623529434, b: 0, a: 0}
   ButtonSelectedColor: {r: .996078432, g: .890196085, b: 0, a: 0}

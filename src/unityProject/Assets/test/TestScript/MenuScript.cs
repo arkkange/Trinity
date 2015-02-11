@@ -137,6 +137,7 @@ public class MenuScript : MonoBehaviour {
 	void launchGameServer() {
 
 		_thisPanelGameObject = Instantiate(_thisPanelGameObject, new Vector3(0,0,0), Quaternion.identity) as GameObject;
+		
 		CratePanelPrefab panel = _thisPanelGameObject.GetComponent<CratePanelPrefab>();
 		
 		panel.PlayerPrefab = chosenObject;

@@ -6,8 +6,10 @@ public class SkillHeal : SkillTest {
 	public override IEnumerator skillResolve (GameObject actualPos, Vector3 Direction, float magnitude)
 	{
 		//var rotate = Quaternion.LookRotation (Direction).eulerAngles;
-		Transform attackManager = (Transform)Network.Instantiate(_prefabsTransform, actualPos.transform.position, Quaternion.identity,0);
+		Transform attackManager = (Transform)Network.Instantiate(_prefabsTransform, actualPos.transform.position + (Direction*magnitude), Quaternion.identity,0);
 		attackManager.collider.isTrigger = false;
+		attackManager.Rotate(new Vector3(90,0,0));
+		attackManager.localScale.Scale(new Vector3(3,3,3));
 		ColiderManager skillToUse = attackManager.GetComponent<ColiderManager>();
 		skillToUse.skill = this;
 		float time = getCastTime(magnitude);
@@ -24,20 +26,33 @@ public class SkillHeal : SkillTest {
 	
 	public override void giveDamage(scriptSkillSet player){
 		player.ActualHealth+=_damageValue;
+		if(player.ActualHealth > player.MaxHealth)
+		{
+			player.ActualHealth = player.MaxHealth;
+		}
 	}
 	
 	public override float getSkillMagnitude(Transform hisTransform, Vector3 var)
 	{
-		return 0;
+		return (hisTransform.position - var).magnitude;
 	}
 	
 	
 	
 	public override Transform skillShow(Vector3 position, Vector3 total)
 	{
-		var rotate = Quaternion.LookRotation (position - total).eulerAngles;
+		Transform show = Instantiate(_prefabsTransform, position, Quaternion.identity) as Transform;
+
+		if(((position - total).magnitude) > 10)
+		{
+			position = (position - total).normalized * 10;
+		}
+		show.position = position;
+
+		show.Rotate(new Vector3(90,0,0));
+		show.localScale.Scale(new Vector3(3,3,3));
 		
-		return Instantiate(_prefabsTransform, total + ((position - total).normalized*0.75f), Quaternion.Euler(rotate)) as Transform;
+		return show;
 	}
 	
 	
@@ -48,6 +63,6 @@ public class SkillHeal : SkillTest {
 	
 	public override Vector3 getSkillDirection(Transform hisTransform,Vector3 var)
 	{
-		return hisTransform.rotation * Vector3.forward;
+		return (hisTransform.position - var).normalized;
 	}
 }

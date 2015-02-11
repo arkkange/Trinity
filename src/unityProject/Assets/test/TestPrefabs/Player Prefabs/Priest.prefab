@@ -52,6 +52,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &158388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 458388}
+  - 114: {fileID: 11458388}
+  m_Layer: 0
+  m_Name: SkillHeal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &419224
 Transform:
   m_ObjectHideFlags: 1
@@ -88,8 +104,21 @@ Transform:
   m_Children:
   - {fileID: 419226}
   - {fileID: 419224}
+  - {fileID: 458388}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &458388
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158388}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.24964046, y: -.967541695, z: -.522871971}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 419228}
+  m_RootOrder: 2
 --- !u!23 &2319228
 Renderer:
   m_ObjectHideFlags: 1
@@ -179,9 +208,28 @@ MonoBehaviour:
   playerSkillSet:
   - {fileID: 11419226}
   - {fileID: 11419224}
+  - {fileID: 11414324, guid: 227a9f174d0e9544fa53f02d052abdad, type: 2}
   _name: Priest
-  MaxHealth: 100
+  MaxHealth: 500
   ActualHealth: 100
+--- !u!114 &11458388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7783eefe3daef1b4293b1eee9a5b4b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefabsTransform: {fileID: 459518, guid: 77ef0b7a46611c5438591fe2c300fbb2, type: 2}
+  _mySprite: {fileID: 21300000, guid: e2b0c94694aa5c34cbaee06e1eceb84e, type: 3}
+  _ColorTimeLineSkill1: {r: .34180361, g: .801470578, b: .402035892, a: 0}
+  _castTime: 5
+  _powerValue: 5
+  _damageValue: 200
+  _name: Heal
 --- !u!148 &14825622
 NetworkView:
   m_ObjectHideFlags: 1
