@@ -186,8 +186,6 @@ MonoBehaviour:
   _myPanelOfPanelsArea: {fileID: 22494258}
   _myText: {fileID: 0}
   myCancelButton: {fileID: 22494268}
-  moveSkill: {fileID: 11428814, guid: f25ecfbbf4fbd3845b1eae9bc08324ae, type: 2}
-  attackskill: {fileID: 11427792, guid: 656886b618e4abc4c9a47e1085ea51db, type: 2}
 --- !u!114 &11494260
 MonoBehaviour:
   m_ObjectHideFlags: 1

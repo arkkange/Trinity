@@ -16,7 +16,12 @@ public class SkillMove : SkillTest {
 		}
 	} 
 
-	public override Transform skillShow( Vector3 position)
+	public override float getSkillMagnitude(Transform hisTransform, Vector3 var)
+	{
+		return (hisTransform.position - var).magnitude;
+	}
+
+	public override Transform skillShow( Vector3 position, Vector3 total)
 	{
 		Transform show = Instantiate(_prefabsTransform, position, Quaternion.identity) as Transform;
 		show.Rotate(new Vector3(90,0,0));
@@ -28,5 +33,15 @@ public class SkillMove : SkillTest {
 	public override float getCastTime(float magnitude)
 	{
 		return magnitude / _damageValue;
+	}
+
+	public override Vector3 getSkillDirection(Transform hisTransform,Vector3 var)
+	{
+		return (hisTransform.position - var).normalized;
+	}
+
+	public override void giveDamage(scriptSkillSet player) 
+	{
+
 	}
 }

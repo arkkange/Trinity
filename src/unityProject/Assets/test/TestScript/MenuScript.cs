@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class MenuScript : MonoBehaviour {
 
 	[SerializeField]
-	List<GameObject> playerPrefabs = new List<GameObject>();
-	List<bool> IsthisSkillchosen = new List<bool>();
+	public List<GameObject> playerPrefabs = new List<GameObject>();
+	public List<bool> IsthisSkillchosen = new List<bool>();
 
 	[SerializeField]
 	GameObject _thisPanelGameObject;
@@ -16,15 +16,21 @@ public class MenuScript : MonoBehaviour {
 	int indexChosen = -1;
 
 	bool GameStarted = false;
+	bool isClient = false;
 
 	public string IP = "127.0.0.1";
 	public int Port = 25001;
 
 	void Start()
 	{
+		MasterServer.ipAddress = IP;
+		MasterServer.port = 23466;
+		Network.natFacilitatorIP = IP;
+		Network.natFacilitatorPort = Port;
+
 		for(int i = 0; i < playerPrefabs.Count; i++)
 		{
-			playerPrefabs[i].renderer.enabled = false;
+			//playerPrefabs[i].renderer.enabled = false;
 		}
 
 		for(int i = 0; i < playerPrefabs.Count; i++)
@@ -44,16 +50,36 @@ public class MenuScript : MonoBehaviour {
 			} else {
 				if(Network.peerType == NetworkPeerType.Disconnected)
 				{
+					if (isClient)
+					{
+						if(GUI.Button(new Rect(100,100,100,25),"Refresh"))
+						{
+							MasterServer.RequestHostList("aaa");
+						}
+					HostData[] hosts = MasterServer.PollHostList();
+
+						for(int i = 0; i < hosts.Length; ++i) 
+						{
+							if(GUI.Button(new Rect(100, 150-(i*100),150,50), hosts[i].gameName))
+							{
+								Network.Connect(hosts[i]);
+							}
+						}
+					} else {
 					if(GUI.Button(new Rect(100,100,100,25),"Start Client"))
 					{
-						Network.Connect(IP, Port);
-					   
+						isClient = true;
+						
 					}
-
+					
 					if(GUI.Button(new Rect(100,125,100,25),"Start Server"))
 					{
-						Network.InitializeServer(10,Port);
+						//Network.InitializeServer(10,Port);
+						Network.InitializeServer(3,Port,true);
+						MasterServer.RegisterHost("aaa","MyGame", "gnagnagna");
 					}
+				}
+					
 
 				} else {
 					if(Network.peerType == NetworkPeerType.Client)
@@ -90,13 +116,13 @@ public class MenuScript : MonoBehaviour {
 		
 		bool canLaunch = true;
 
-		for(int i = 0; i < IsthisSkillchosen.Count ; i++)
+		/*for(int i = 0; i < IsthisSkillchosen.Count ; i++)
 		{
 			if(IsthisSkillchosen[i] == false)
 			{
 				canLaunch = false;
 			}
-		}
+		}*/
 		if(canLaunch) {
 			if(GUI.Button(new Rect(225,125,100,25), "Lancer Partie"))
 			{
@@ -111,18 +137,22 @@ public class MenuScript : MonoBehaviour {
 	void launchGameServer() {
 
 		_thisPanelGameObject = Instantiate(_thisPanelGameObject, new Vector3(0,0,0), Quaternion.identity) as GameObject;
+		
 		CratePanelPrefab panel = _thisPanelGameObject.GetComponent<CratePanelPrefab>();
+		
 		panel.PlayerPrefab = chosenObject;
-
-		for(int i = 0; i < playerPrefabs.Count; i++)
+		if(Network.peerType == NetworkPeerType.Server)
 		{
-			playerPrefabs[i].renderer.enabled = true;
-			panel.AllPlayers.Add(playerPrefabs[i]);
+Debug.Log("dsdsd");
+			panel._thisPlayer = (GameObject)Network.Instantiate(panel.PlayerPrefab, new Vector3(0,0,0), Quaternion.identity,0);
+		} else {
+			panel._thisPlayer = (GameObject)Network.Instantiate(panel.PlayerPrefab, new Vector3(0,0,0), Quaternion.identity,1);
 		}
+		
 
 		panel.initialize(indexChosen);
-
 		GameStarted = true;
+		
 	}
 
 	void drawChosenPlayer(){

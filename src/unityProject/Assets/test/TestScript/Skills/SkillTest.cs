@@ -7,7 +7,7 @@ public abstract class SkillTest : MonoBehaviour {
 	public Transform _prefabsTransform;
 
     [SerializeField]
-    Sprite _mySprite;
+    public Sprite _mySprite;
 
     public Color _ColorTimeLineSkill1;
 
@@ -24,10 +24,15 @@ public abstract class SkillTest : MonoBehaviour {
 	{
 		
 	}*/
-	public abstract Transform skillShow(Vector3 position);
+	public abstract Transform skillShow(Vector3 position, Vector3 total);
 
 	public abstract IEnumerator skillResolve(GameObject actualPos, Vector3 Direction, float magnitude);
 
 	public abstract float getCastTime(float magnitude);
 
+	public abstract Vector3 getSkillDirection(Transform hisTransform, Vector3 var);
+
+	public abstract float getSkillMagnitude(Transform hisTransform, Vector3 var);
+
+	public abstract void giveDamage(scriptSkillSet player);
 }
