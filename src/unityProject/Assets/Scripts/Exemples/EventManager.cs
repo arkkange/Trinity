@@ -3,24 +3,31 @@ using System.Collections;
 
 public class EventManager : MonoBehaviour {
 
+	[SerializeField]
+	GameObject camera;
 
-	public delegate void MovingCameraHandler (float x, float y, float z);
-	public static event MovingCameraHandler cameraMove;
-
-	void OnGUI()
+	void Update()
 	{
+		int multiply = 3;
+		if(Input.GetKey(KeyCode.RightShift))
+		{
+			multiply = 3*3;
+		}
+
 		if (Input.GetKey (KeyCode.DownArrow)) {
-			if(cameraMove != null)
-			{
-				cameraMove(0,-1*Time.deltaTime,0);
-			}
+			camera.transform.position += new Vector3(0,0,-multiply*Time.deltaTime);
 		} 
 
 		if (Input.GetKey (KeyCode.UpArrow)) {
-			if(cameraMove != null)
-			{
-				cameraMove(0,1*Time.deltaTime,0);
-			}
+			camera.transform.position += new Vector3(0,0,multiply*Time.deltaTime);
+		}
+		
+		if (Input.GetKey (KeyCode.LeftArrow)) {
+			camera.transform.position += new Vector3(-multiply*Time.deltaTime,0,0);
+		} 
+		
+		if (Input.GetKey (KeyCode.RightArrow)) {
+			camera.transform.position += new Vector3(multiply*Time.deltaTime,0,0);
 		}
 	}
 }

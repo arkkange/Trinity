@@ -1,0 +1,267 @@
+fileFormatVersion: 2
+guid: 88224d383271dff41a36b67cdd83fe79
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: bas_bras_d
+    100002: bas_bras_g
+    100004: bas_jambe_d001
+    100006: bas_jambe_g
+    100008: Bone001
+    100010: Bone002
+    100012: Bone003
+    100014: Bone004
+    100016: Bone005
+    100018: Bone006
+    100020: Bone007
+    100022: Bone008
+    100024: Bone009
+    100026: Bone010
+    100028: Bone011
+    100030: Bone012
+    100032: Bone013
+    100034: Bone014
+    100036: Bone015
+    100038: Bone016
+    100040: Bone017
+    100042: bras_d
+    100044: bras_g
+    100046: Cone001
+    100048: Cone002
+    100050: corp_arriere
+    100052: corp_avant
+    100054: corp_millieu
+    100056: IK Chain001
+    100058: IK Chain002
+    100060: IK Chain003
+    100062: IK Chain004
+    100064: jambe_d
+    100066: jambe_g
+    100068: tete
+    100070: //RootNode
+    400000: bas_bras_d
+    400002: bas_bras_g
+    400004: bas_jambe_d001
+    400006: bas_jambe_g
+    400008: Bone001
+    400010: Bone002
+    400012: Bone003
+    400014: Bone004
+    400016: Bone005
+    400018: Bone006
+    400020: Bone007
+    400022: Bone008
+    400024: Bone009
+    400026: Bone010
+    400028: Bone011
+    400030: Bone012
+    400032: Bone013
+    400034: Bone014
+    400036: Bone015
+    400038: Bone016
+    400040: Bone017
+    400042: bras_d
+    400044: bras_g
+    400046: Cone001
+    400048: Cone002
+    400050: corp_arriere
+    400052: corp_avant
+    400054: corp_millieu
+    400056: IK Chain001
+    400058: IK Chain002
+    400060: IK Chain003
+    400062: IK Chain004
+    400064: jambe_d
+    400066: jambe_g
+    400068: tete
+    400070: //RootNode
+    2300000: bas_bras_d
+    2300002: bas_bras_g
+    2300004: bas_jambe_d001
+    2300006: bas_jambe_g
+    2300008: bras_d
+    2300010: bras_g
+    2300012: corp_arriere
+    2300014: corp_avant
+    2300016: corp_millieu
+    2300018: jambe_d
+    2300020: jambe_g
+    2300022: tete
+    3300000: bas_bras_d
+    3300002: bas_bras_g
+    3300004: bas_jambe_d001
+    3300006: bas_jambe_g
+    3300008: bras_d
+    3300010: bras_g
+    3300012: corp_arriere
+    3300014: corp_avant
+    3300016: corp_millieu
+    3300018: jambe_d
+    3300020: jambe_g
+    3300022: tete
+    4300000: bas_bras_g
+    4300002: bras_g
+    4300004: bas_jambe_g
+    4300006: jambe_g
+    4300008: bas_jambe_d001
+    4300010: jambe_d
+    4300012: tete
+    4300014: corp_avant
+    4300016: corp_millieu
+    4300018: corp_arriere
+    4300020: bas_bras_d
+    4300022: bras_d
+    7400000: Run
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Run
+      takeName: Take 001
+      firstFrame: 65
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bone001
+        weight: 1
+      - path: Bone001/Bone002
+        weight: 1
+      - path: Bone001/Bone002/bas_bras_g
+        weight: 1
+      - path: Bone001/Bone002/Bone003
+        weight: 1
+      - path: Bone001/bras_g
+        weight: 1
+      - path: Bone004
+        weight: 1
+      - path: Bone004/Bone005
+        weight: 1
+      - path: Bone004/Bone005/bas_jambe_g
+        weight: 1
+      - path: Bone004/Bone005/Bone006
+        weight: 1
+      - path: Bone004/jambe_g
+        weight: 1
+      - path: Bone007
+        weight: 1
+      - path: Bone007/Bone008
+        weight: 1
+      - path: Bone007/Bone008/bas_bras_d
+        weight: 1
+      - path: Bone007/Bone008/Bone009
+        weight: 1
+      - path: Bone007/bras_d
+        weight: 1
+      - path: Bone012
+        weight: 1
+      - path: Bone012/Bone011
+        weight: 1
+      - path: Bone012/Bone011/bas_jambe_d001
+        weight: 1
+      - path: Bone012/Bone011/Bone010
+        weight: 1
+      - path: Bone012/jambe_d
+        weight: 1
+      - path: Bone013
+        weight: 1
+      - path: Bone013/Bone014
+        weight: 1
+      - path: Bone013/Bone014/Bone015
+        weight: 1
+      - path: Bone013/Bone014/Bone015/Bone016
+        weight: 1
+      - path: Bone013/Bone014/Bone015/Bone016/Bone017
+        weight: 1
+      - path: Bone013/Bone014/Bone015/Bone016/tete
+        weight: 1
+      - path: Bone013/Bone014/Bone015/corp_avant
+        weight: 1
+      - path: Bone013/Bone014/corp_millieu
+        weight: 1
+      - path: Bone013/corp_arriere
+        weight: 1
+      - path: Cone001
+        weight: 1
+      - path: Cone002
+        weight: 1
+      - path: IK Chain001
+        weight: 1
+      - path: IK Chain002
+        weight: 1
+      - path: IK Chain003
+        weight: 1
+      - path: IK Chain004
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

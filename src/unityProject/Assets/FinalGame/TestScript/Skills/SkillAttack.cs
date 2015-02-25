@@ -1,0 +1,63 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class SkillAttack : SkillTest {
+
+	public override IEnumerator skillResolve (GameObject actualPos, Vector3 Direction, float magnitude)
+	{
+		var rotate = Quaternion.LookRotation (Direction).eulerAngles;
+		Transform attackManager = (Transform)Network.Instantiate(_prefabsTransform, actualPos.transform.position +(Direction*0.85f), Quaternion.Euler(rotate),0);
+		attackManager.collider.isTrigger = false;
+		ColiderManager skillToUse = attackManager.GetComponent<ColiderManager>();
+		skillToUse.skill = this;
+		float time = getCastTime(magnitude);
+		float i = 0;
+		while(i < time)
+		{
+			i += Time.deltaTime; 
+			yield return null;
+		}
+		attackManager.collider.isTrigger = true;
+		yield return null;
+		Network.Destroy((attackManager as Transform).gameObject);
+	}
+
+	public override void giveDamage(scriptSkillSet player){
+		player.ActualHealth-=_damageValue;
+		player.callActualizeHealth();
+		if(player.ActualHealth <= 0)
+		{
+			player.die();
+		}
+	}
+
+	public override float getSkillMagnitude(Transform hisTransform, Vector3 var)
+	{
+		return 0;
+	}
+
+
+
+	public override Transform skillShow(Vector3 position, Vector3 total)
+	{
+		var rotate = Quaternion.LookRotation (position - total).eulerAngles;
+
+		return Instantiate(_prefabsTransform, total + ((position - total).normalized*0.85f), Quaternion.Euler(rotate)) as Transform;
+	}
+
+
+	public override float getCastTime(float magnitude)
+    { 
+		return _castTime;
+    }
+
+	public override Vector3 getSkillDirection(Transform hisTransform,Vector3 var)
+	{
+		return hisTransform.rotation * Vector3.forward;
+	}
+
+	public override void giveDamage(Transform isSkill)
+	{
+		
+	}
+}
