@@ -10,11 +10,9 @@ public class ColiderManager : MonoBehaviour {
 		if(test) {
 			skill.giveDamage(test);
 		}
-		SkillTest test2 = other.gameObject.GetComponent<SkillTest>();
+		ColiderManager test2 = other.gameObject.GetComponent<ColiderManager>();
 		if(test2) {
-			Debug.Log ("Flute");
 			skill.giveDamage(other.transform);
-
 		}
 	}
 }

@@ -33,32 +33,27 @@ public class BasicIa : MonoBehaviour {
 		var rotate = Quaternion.LookRotation (GameObject.FindGameObjectWithTag ("Player").transform.position - transform.position).eulerAngles;
 		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.Euler(rotate), Time.deltaTime * 3.0f);
 
-		Debug.Log (distance);
-
-		if (distance < 20 && distance > 2) {
+		if (distance < 12 && distance > 2) {
 			PlayerIsHere.y = 0;
-			//Debug.Log("comming");
 			thisObj.rigidbody.velocity = PlayerIsHere.normalized * speed;
 		} else if(distance > 0 && distance < 2) {
 			thisObj.rigidbody.velocity = new Vector3(0,0,0);
-			//Debug.Log("attacking");
 			attackIs = true;
 		} else {
 			if (distanceFromStart > 0.2f) {
-				//Debug.Log("returning");
 				point.y = 0;
 				thisObj.rigidbody.velocity = point.normalized * speed;
 			} else {
-				//Debug.Log("don't move");
 				thisObj.rigidbody.velocity = new Vector3(0,0,0);
 			}
 		}
 	}
 
 	public void attack() {
-		Debug.Log("attacking");
-		//hisTransform.rotation * 
-			StartCoroutine(skills.playerSkillSet[0].skillResolve(gameObject,transform.rotation *Vector3.forward, 0));
+
+		Vector3 PlayerIsHere =  GameObject.FindGameObjectWithTag ("Player").transform.position - transform.position;
+
+		StartCoroutine(skills.playerSkillSet[0].skillResolve(gameObject, (PlayerIsHere).normalized, 0));
 	}
 
 	public IEnumerator IaSetOK()
@@ -69,7 +64,6 @@ public class BasicIa : MonoBehaviour {
 		{
 			checkMovement();
 			if(attackIs) {
-				Debug.Log("TA GUEULE");
 				attackIs = false;
 				attack ();
 				i += 2.0f;
